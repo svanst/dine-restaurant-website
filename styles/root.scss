@@ -33,4 +33,14 @@
   @include media--laptop-and-up {
     --fs-800: #{to-rem(80px)};
   }
+
+  --letter-spacing-100: -1px;
+  --letter-spacing-200: -0.5px;
+  --letter-spacing-300: -0.25px;
+  --letter-spacing-400: normal;
+  --letter-spacing-700: 2.5px;
+
+  --line-height-200: 1.2;
+  --line-height-300: 1.25;
+  --line-height-400: 1.625;
 }
