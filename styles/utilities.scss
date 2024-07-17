@@ -35,59 +35,59 @@
 /* colors */
 
 .bg-accent {
-  background: hsl(var(--clr-accent));
+  background: hsl(var(--clr-accent) / var(--alpha, 1));
 }
 
 .bg-neutral-100 {
-  background: hsl(var(--clr-neutral-100));
+  background: hsl(var(--clr-neutral-100) / var(--alpha, 1));
 }
 
 .bg-neutral-400 {
-  background: hsl(var(--clr-neutral-400));
+  background: hsl(var(--clr-neutral-400) / var(--alpha, 1));
 }
 
 .bg-neutral-500 {
-  background: hsl(var(--clr-neutral-500));
+  background: hsl(var(--clr-neutral-500) / var(--alpha, 1));
 }
 
 .bg-neutral-600 {
-  background: hsl(var(--clr-neutral-600));
+  background: hsl(var(--clr-neutral-600) / var(--alpha, 1));
 }
 
 .bg-neutral-700 {
-  background: hsl(var(--clr-neutral-700));
+  background: hsl(var(--clr-neutral-700) / var(--alpha, 1));
 }
 
 .bg-neutral-900 {
-  background: hsl(var(--clr-neutral-900));
+  background: hsl(var(--clr-neutral-900) / var(--alpha, 1));
 }
 
 .text-accent {
-  color: hsl(var(--clr-accent));
+  color: hsl(var(--clr-accent) / var(--alpha, 1));
 }
 
 .text-neutral-100 {
-  color: hsl(var(--clr-neutral-100));
+  color: hsl(var(--clr-neutral-100) / var(--alpha, 1));
 }
 
 .text-neutral-400 {
-  color: hsl(var(--clr-neutral-400));
+  color: hsl(var(--clr-neutral-400) / var(--alpha, 1));
 }
 
 .text-neutral-500 {
-  color: hsl(var(--clr-neutral-500));
+  color: hsl(var(--clr-neutral-500) / var(--alpha, 1));
 }
 
 .text-neutral-600 {
-  color: hsl(var(--clr-neutral-600));
+  color: hsl(var(--clr-neutral-600) / var(--alpha, 1));
 }
 
 .text-neutral-700 {
-  color: hsl(var(--clr-neutral-700));
+  color: hsl(var(--clr-neutral-700) / var(--alpha, 1));
 }
 
 .text-neutral-900 {
-  color: hsl(var(--clr-neutral-900));
+  color: hsl(var(--clr-neutral-900) / var(--alpha, 1));
 }
 
 /* letter spacing */

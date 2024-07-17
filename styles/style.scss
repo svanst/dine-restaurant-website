@@ -3,6 +3,7 @@
 @use "functions" as *;
 @use "utilities" as *;
 @use "media-queries" as *;
+@use "components" as *;
 
 body {
   font-family: var(--ff-body), var(--ff-system-sans);
