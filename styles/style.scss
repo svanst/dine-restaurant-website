@@ -1,0 +1,10 @@
+@use "reset";
+@use "root";
+@use "functions" as *;
+@use "utilities" as *;
+@use "media-queries" as *;
+
+body {
+  font-family: var(--ff-body), var(--ff-system-sans);
+  font-size: var(--fs-400);
+}

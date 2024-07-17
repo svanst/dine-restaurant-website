@@ -1,0 +1,10 @@
+@use "functions" as *;
+
+:root {
+  --ff-system-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+  --ff-body: "";
+
+  --fs-400: #{to-rem(16px)};
+}
