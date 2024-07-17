@@ -47,10 +47,453 @@
     <link rel="stylesheet" href="./styles/utilities.scss" />
   </head>
   <body>
-    <div role="tablist">
-      <button role="tab" aria-selected="true">Family gathering</button>
-      <button role="tab">Special events</button>
-      <button role="tab">Social events</button>
-    </div>
+    <header class="bg-neutral-700">
+      <img src="./assets/logo.svg" alt="" aria-label="Dine | Home" />
+    </header>
+    <section class="hero">
+      <picture class="hero__picture">
+        <source
+          srcset="
+            ./assets/homepage/hero-bg-desktop.jpg,
+            ./assets/homepage/hero-bg-desktop@2x.jpg 2x
+          "
+          media="(min-width: 68.75rem)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="
+            ./assets/homepage/hero-bg-tablet.jpg,
+            ./assets/homepage/hero-bg-tablet@2x.jpg 2x
+          "
+          media="(min-width: 34.375rem)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="
+            ./assets/homepage/hero-bg-mobile.jpg,
+            ./assets/homepage/hero-bg-mobile@2x.jpg 2x
+          "
+          type="image/jpeg"
+        />
+        <img
+          src="./assets/homepage/hero-bg-mobile.jpg"
+          srcset="./assets/homepage/hero-bg-mobile@2x.jpg 2x"
+          alt=""
+        />
+      </picture>
+      <h1>Exquisite dining <span>since 1989</span></h1>
+      <p>
+        Experience our seasonal menu in beautiful country surroundings. Eat the
+        freshest produce from the comfort of our farmhouse.
+      </p>
+      <button>Book a table</button>
+    </section>
+    <main class="flow">
+      <section class="features">
+        <picture class="features__picture">
+          <!-- Desktop image -->
+          <source
+            srcset="
+              ./assets/homepage/enjoyable-place-desktop.jpg,
+              ./assets/homepage/enjoyable-place-desktop@2x.jpg 2x
+            "
+            media="(min-width: 68.75rem)"
+            type="image/jpeg"
+          />
+          <!-- Tablet image -->
+          <source
+            srcset="
+              ./assets/homepage/enjoyable-place-tablet.jpg,
+              ./assets/homepage/enjoyable-place-tablet@2x.jpg 2x
+            "
+            media="(min-width: 34.375rem)"
+            type="image/jpeg"
+          />
+          <!-- Mobile image -->
+          <source
+            srcset="
+              ./assets/homepage/enjoyable-place-mobile.jpg,
+              ./assets/homepage/enjoyable-place-mobile@2x.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <!-- Fallback -->
+          <img
+            src="./assets/homepage/enjoyable-place-mobile.jpg"
+            srcset="./assets/homepage/enjoyable-place-mobile@2x.jpg 2x"
+            alt=""
+          />
+        </picture>
+        <div class="features__text">
+          <h2>Enjoyable place for all the family</h2>
+          <p>
+            Our relaxed surroundings make dining with us a great experience for
+            everyone. We can even arrange a tour of the farm before your meal.
+          </p>
+        </div>
+        <picture class="features__picture">
+          <source
+            srcset="
+              ./assets/homepage/locally-sourced-desktop.jpg,
+              ./assets/homepage/locally-sourced-desktop@2x.jpg 2x
+            "
+            media="(min-width: 68.75rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/locally-sourced-tablet.jpg,
+              ./assets/homepage/locally-sourced-tablet@2x.jpg 2x
+            "
+            media="(min-width: 34.375rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/locally-sourced-mobile.jpg,
+              ./assets/homepage/locally-sourced-mobile@2x.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            src="./assets/homepage/locally-sourced-mobile.jpg"
+            srcset="./assets/homepage/locally-sourced-mobile@2x.jpg 2x"
+            alt=""
+          />
+        </picture>
+        <div class="features__text">
+          <h2>The most locally sourced food</h2>
+          <p>
+            All our ingredients come directly from our farm or local fishery. So
+            you can be sure that you’re eating the freshest, most sustainable
+            food.
+          </p>
+        </div>
+      </section>
+      <section class="highlights">
+        <div>
+          <h2>A few highlights from our menu</h2>
+          <p>
+            We cater for all dietary requirements, but here’s a glimpse at some
+            of our diner’s favourites. Our menu is revamped every season.
+          </p>
+        </div>
+        <ul>
+          <li>
+            <picture>
+              <source
+                srcset="
+                  ./assets/homepage/salmon-desktop-tablet.jpg,
+                  ./assets/homepage/salmon-desktop-tablet@2x.jpg 2x
+                "
+                media="(min-width: 34.375rem)"
+                type="image/jpeg"
+              />
+              <source
+                srcset="
+                  ./assets/homepage/salmon-mobile.jpg,
+                  ./assets/homepage/salmon-mobile@2x.jpg 2x
+                "
+                type="image/jpeg"
+              />
+              <img
+                src="./assets/homepage/salmon-mobile.jpg"
+                srcset="./assets/homepage/salmon-mobile@2x.jpg 2x"
+                alt=""
+              />
+            </picture>
+            <h3>Seared Salmon Fillet</h3>
+            <p>
+              Our locally sourced salmon served with a refreshing buckwheat
+              summer salad.
+            </p>
+          </li>
+          <li>
+            <picture>
+              <source
+                srcset="
+                  ./assets/homepage/beef-desktop-tablet.jpg,
+                  ./assets/homepage/beef-desktop-tablet@2x.jpg 2x
+                "
+                media="(min-width: 34.375rem)"
+                type="image/jpeg"
+              />
+
+              <source
+                srcset="
+                  ./assets/homepage/beef-mobile.jpg,
+                  ./assets/homepage/beef-mobile@2x.jpg 2x
+                "
+                type="image/jpeg"
+              />
+
+              <img
+                src="./assets/homepage/beef-mobile.jpg"
+                srcset="./assets/homepage/beef-mobile@2x.jpg 2x"
+                alt=""
+              />
+            </picture>
+            <h3>Rosemary Filet Mignon</h3>
+            <p>
+              Our prime beef served to your taste with a delicious choice of
+              seasonal sides.
+            </p>
+          </li>
+          <li>
+            <picture>
+              <source
+                srcset="
+                  ./assets/homepage/chocolate-desktop-tablet.jpg,
+                  ./assets/homepage/chocolate-desktop-tablet@2x.jpg 2x
+                "
+                media="(min-width: 34.375rem)"
+                type="image/jpeg"
+              />
+              <source
+                srcset="
+                  ./assets/homepage/chocolate-mobile.jpg,
+                  ./assets/homepage/chocolate-mobile@2x.jpg 2x
+                "
+                type="image/jpeg"
+              />
+              <img
+                src="./assets/homepage/chocolate-mobile.jpg"
+                srcset="./assets/homepage/chocolate-mobile@2x.jpg 2x"
+                alt=""
+              />
+            </picture>
+
+            <h3>Summer Fruit Chocolate Mousse</h3>
+            <p>
+              Creamy mousse combined with summer fruits and dark chocolate
+              shavings.
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section class="occasions">
+        <!-- family-gathering -->
+        <picture id="img-family">
+          <source
+            srcset="
+              ./assets/homepage/family-gathering-desktop.jpg,
+              ./assets/homepage/family-gathering-desktop@2x.jpg 2x
+            "
+            media="(min-width: 68.75rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/family-gathering-tablet.jpg,
+              ./assets/homepage/family-gathering-tablet@2x.jpg 2x
+            "
+            media="(min-width: 34.375rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/family-gathering-mobile.jpg,
+              ./assets/homepage/family-gathering-mobile@2x.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            src="./assets/homepage/family-gathering-mobile.jpg"
+            srcset="./assets/homepage/family-gathering-mobile@2x.jpg 2x"
+            alt=""
+          />
+        </picture>
+        <!-- special-events -->
+        <picture id="img-special" hidden>
+          <source
+            srcset="
+              ./assets/homepage/special-events-desktop.jpg,
+              ./assets/homepage/special-events-desktop@2x.jpg 2x
+            "
+            media="(min-width: 68.75rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/special-events-tablet.jpg,
+              ./assets/homepage/special-events-tablet@2x.jpg 2x
+            "
+            media="(min-width: 34.375rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/special-events-mobile.jpg,
+              ./assets/homepage/special-events-mobile@2x.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            src="./assets/homepage/special-events-mobile.jpg"
+            srcset="./assets/homepage/special-events-mobile@2x.jpg 2x"
+            alt=""
+          />
+        </picture>
+        <!-- social-events -->
+        <picture id="img-social" hidden>
+          <source
+            srcset="
+              ./assets/homepage/social-events-desktop.jpg,
+              ./assets/homepage/social-events-desktop@2x.jpg 2x
+            "
+            media="(min-width: 68.75rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/social-events-tablet.jpg,
+              ./assets/homepage/social-events-tablet@2x.jpg 2x
+            "
+            media="(min-width: 34.375rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/social-events-mobile.jpg,
+              ./assets/homepage/social-events-mobile@2x.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            src="./assets/homepage/social-events-mobile.jpg"
+            srcset="./assets/homepage/social-events-mobile@2x.jpg 2x"
+            alt=""
+          />
+        </picture>
+        <div>
+          <div role="tablist">
+            <button
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-family"
+              data-img="img-social"
+              id="tab-family"
+            >
+              Family gathering
+            </button>
+            <button
+              role="tab"
+              tabindex="-1"
+              aria-controls="panel-special"
+              data-img="img-special"
+              id="tab-special"
+            >
+              Special events
+            </button>
+            <button
+              role="tab"
+              tabindex="-1"
+              aria-controls="panel-social"
+              data-img="img-social"
+              id="tab-social"
+            >
+              Social events
+            </button>
+          </div>
+          <article
+            role="tabpanel"
+            tabindex="0"
+            id="panel-family"
+            aria-labelledby="tab-family"
+          >
+            <h2>Family gathering</h2>
+            <p>
+              We love catering for entire families. So please bring everyone
+              along for a special meal with your loved ones. We’ll provide a
+              memorable experience for all.
+            </p>
+            <button class="btn btn--primary">Book a table</button>
+          </article>
+          <article
+            role="tabpanel"
+            id="panel-special"
+            aria-labelledby="tab-special"
+            hidden
+          >
+            <h2>Special Events</h2>
+            <p>
+              Whether it’s a romantic dinner or special date you’re celebrating
+              with others we’ll look after you. We’ll be sure to mark your
+              special date with an unforgettable meal.
+            </p>
+            <button class="btn btn--primary">Book a table</button>
+          </article>
+          <article
+            role="tabpanel"
+            id="panel-social"
+            aria-labelledby="tab-social"
+            hidden
+          >
+            <h2>Social Events</h2>
+            <p>
+              Are you looking to have a larger social event? No problem! We’re
+              more than happy to cater for big parties. We’ll work with you to
+              make your event a hit with everyone.
+            </p>
+            <button class="btn btn--primary">Book a table</button>
+          </article>
+        </div>
+      </section>
+      <section class="cta">
+        <picture class="cta__picture">
+          <source
+            srcset="
+              ./assets/homepage/ready-bg-desktop.jpg,
+              ./assets/homepage/ready-bg-desktop@2x.jpg 2x
+            "
+            media="(min-width: 68.75rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/ready-bg-tablet.jpg,
+              ./assets/homepage/ready-bg-tablet@2x.jpg 2x
+            "
+            media="(min-width: 34.375rem)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="
+              ./assets/homepage/ready-bg-mobile.jpg,
+              ./assets/homepage/ready-bg-mobile@2x.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            src="./assets/homepage/ready-bg-mobile.jpg"
+            srcset="./assets/homepage/ready-bg-mobile@2x.jpg 2x"
+            alt=""
+          />
+        </picture>
+        <h2>Ready to make a reservation?</h2>
+        <button class="btn btn--secondary">Book a table</button>
+      </section>
+    </main>
+    <footer class="footer">
+      <img src="./assets/logo.svg" alt="" aria-label="Dine | Home" />
+      <address>
+        <div class="sr-only">Dine</div>
+        <span>Marthwaite, Sedbergh</span>
+        <span>Cumbria</span>
+        <span>+00 44 123 4567</span>
+      </address>
+      <div>
+        <dl>
+          <div>
+            <dt>mon - fri</dt>
+            <dd>09:00 AM - 10:00 PM</dd>
+          </div>
+          <div>
+            <dt>sat - sun</dt>
+            <dd>09:00 AM - 11:30 PM</dd>
+          </div>
+        </dl>
+      </div>
+    </footer>
   </body>
 </html>

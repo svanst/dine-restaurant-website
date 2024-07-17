@@ -9,6 +9,7 @@
   cursor: pointer;
 
   &--primary {
+    background-color: hsl(var(--clr-neutral-700));
     color: hsl(var(--clr-neutral-100));
 
     &:hover {

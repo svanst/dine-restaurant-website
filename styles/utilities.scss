@@ -121,3 +121,17 @@
 .line-height-400 {
   line-height: var(--line-height-400);
 }
+
+/* layout */
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+/* other */
+
+.hide,
+.hidden,
+[hidden] {
+  display: none;
+}
