@@ -1,10 +1,28 @@
 @use "functions" as *;
+@use "media-queries" as *;
 
 :root {
   --ff-system-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
     sans-serif;
-  --ff-body: "";
+  --ff-body: "League Spartan";
 
+  --fs-100: #{to-rem(10px)};
+  --fs-200: #{to-rem(14px)};
+  --fs-300: #{to-rem(16px)};
   --fs-400: #{to-rem(16px)};
+  --fs-500: #{to-rem(17px)};
+  --fs-600: #{to-rem(20px)};
+  --fs-700: #{to-rem(32px)};
+  --fs-800: #{to-rem(32px)};
+
+  @include media--tablet-and-up {
+    --fs-400: #{to-rem(20px)};
+    --fs-700: #{to-rem(48px)};
+    --fs-800: #{to-rem(48px)};
+  }
+
+  @include media--laptop-and-up {
+    --fs-800: #{to-rem(80px)};
+  }
 }
