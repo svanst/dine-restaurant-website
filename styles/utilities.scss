@@ -1,3 +1,5 @@
+/* font sizes */
+
 .fs-100 {
   font-size: var(--fs-100);
 }
@@ -28,4 +30,62 @@
 
 .fs-800 {
   font-size: var(--fs-800);
+}
+
+/* colors */
+
+.bg-accent {
+  background: hsl(var(--clr-accent));
+}
+
+.bg-neutral-100 {
+  background: hsl(var(--clr-neutral-100));
+}
+
+.bg-neutral-400 {
+  background: hsl(var(--clr-neutral-400));
+}
+
+.bg-neutral-500 {
+  background: hsl(var(--clr-neutral-500));
+}
+
+.bg-neutral-600 {
+  background: hsl(var(--clr-neutral-600));
+}
+
+.bg-neutral-700 {
+  background: hsl(var(--clr-neutral-700));
+}
+
+.bg-neutral-900 {
+  background: hsl(var(--clr-neutral-900));
+}
+
+.text-accent {
+  color: hsl(var(--clr-accent));
+}
+
+.text-neutral-100 {
+  color: hsl(var(--clr-neutral-100));
+}
+
+.text-neutral-400 {
+  color: hsl(var(--clr-neutral-400));
+}
+
+.text-neutral-500 {
+  color: hsl(var(--clr-neutral-500));
+}
+
+.text-neutral-600 {
+  color: hsl(var(--clr-neutral-600));
+}
+
+.text-neutral-700 {
+  color: hsl(var(--clr-neutral-700));
+}
+
+.text-neutral-900 {
+  color: hsl(var(--clr-neutral-900));
 }

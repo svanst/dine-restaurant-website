@@ -7,6 +7,14 @@
     sans-serif;
   --ff-body: "League Spartan";
 
+  --clr-accent: 27 22% 51%; // beaver
+  --clr-neutral-100: 0 0% 100%; // white
+  --clr-neutral-400: 217 14% 42%; // shuttle gray
+  --clr-neutral-500: 218 21% 18%; // ebony clay
+  --clr-neutral-600: 234 30% 13%; // mirage
+  --clr-neutral-700: 0 0% 7%; // cod gray
+  --clr-neutral-900: 0 0% 0%; // black
+
   --fs-100: #{to-rem(10px)};
   --fs-200: #{to-rem(14px)};
   --fs-300: #{to-rem(16px)};
