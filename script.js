@@ -22,9 +22,9 @@ function updateTabsOrientation() {
   const tabletMax = remToPx(getCSSCustomProperty("--medium"));
 
   if (screenWidth >= tabletMin && screenWidth < tabletMax) {
-    occasionsTablist.setAttribute("aria-orientation", "vertical");
-  } else {
     occasionsTablist.setAttribute("aria-orientation", "horizontal");
+  } else {
+    occasionsTablist.setAttribute("aria-orientation", "vertical");
   }
 
   function getCSSCustomProperty(propertyName) {

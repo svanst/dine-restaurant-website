@@ -1,16 +1,22 @@
 .btn {
   border: 1px solid;
-  background-color: transparent;
+  background-color: hsl(var(--clr-neutral-700));
+  color: hsl(var(--clr-neutral-100));
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-700);
-  font-weight: 700;
+  letter-spacing: var(--letter-spacing-500);
+  font-weight: 600;
   padding: 1.5rem 3rem;
   font-size: var(--fs-500);
   cursor: pointer;
 
+  &:hover {
+    color: hsl(var(--clr-neutral-600));
+    background-color: hsl(var(--clr-neutral-100));
+  }
+
   &--primary {
-    background-color: hsl(var(--clr-neutral-700));
-    color: hsl(var(--clr-neutral-100));
+    background-color: transparent;
+    // color: hsl(var(--clr-neutral-100));
 
     &:hover {
       color: hsl(var(--clr-neutral-600));
@@ -26,7 +32,7 @@
     color: hsl(var(--clr-neutral-700));
 
     &:hover {
-      color: hsl(var(--clr-neutral-100));
+      // color: hsl(var(--clr-neutral-100));
       background-color: hsl(var(--clr-neutral-700));
     }
 

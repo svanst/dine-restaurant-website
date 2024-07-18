@@ -1,0 +1,21 @@
+.features {
+  // background-image: url(../assets/patterns/pattern-curve-top-right.svg);
+  > .container {
+    transform: translateY(-70px);
+  }
+
+  .decorated-heading {
+    text-wrap: balance;
+  }
+
+  &__text {
+    margin-bottom: 100px;
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__picture {
+    box-shadow: var(--shadow);
+  }
+}

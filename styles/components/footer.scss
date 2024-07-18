@@ -1,0 +1,16 @@
+.footer {
+  padding-block: 80px;
+  &__logo {
+    margin-bottom: 42px;
+  }
+
+  address {
+    font-style: normal;
+    margin-bottom: 32px;
+  }
+
+  dl div {
+    display: flex;
+    gap: 1ch;
+  }
+}

@@ -1,0 +1,20 @@
+.occasions {
+  padding-block: 80px 124px;
+
+  &__picture {
+    box-shadow: var(--shadow);
+    margin-bottom: 50px;
+  }
+
+  [role="tablist"] {
+    margin-bottom: 27px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 27px;
+  }
+}

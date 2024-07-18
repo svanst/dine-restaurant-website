@@ -10,20 +10,14 @@ body {
   font-size: var(--fs-400);
 }
 
+h1,
+h2,
+h3 {
+  letter-spacing: var(--letter-spacing-300);
+}
+
 // temp
 
 body {
-  padding: 2rem;
-}
-
-main {
-  --flow-space: 3rem;
-}
-
-h1 {
-  color: red !important;
-
-  @include media--laptop-and-up {
-    color: green !important;
-  }
+  line-height: 1.625;
 }
