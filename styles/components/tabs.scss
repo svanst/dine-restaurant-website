@@ -1,5 +1,12 @@
 @use "buttons";
 
+[role="tablist"] {
+  display: flex;
+  &[aria-orientation="vertical"] {
+    flex-direction: column;
+  }
+}
+
 [role="tab"] {
   @extend .btn;
   border: none;

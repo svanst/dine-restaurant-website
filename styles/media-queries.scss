@@ -1,8 +1,17 @@
 $breakpoints: (
-  "small": calc(550 / 16 * 1rem),
-  "medium": calc(1100 / 16 * 1rem),
-  "large": calc(1500 / 16 * 1rem),
+  // 550px
+  small: 34.375rem,
+  // 1100px
+  medium: 68.75rem,
+  // 1500px
+  large: 93.75rem
 );
+
+:root {
+  --small: #{map-get($breakpoints, small)};
+  --medium: #{map-get($breakpoints, medium)};
+  --large: #{map-get($breakpoints, large)};
+}
 
 @mixin media--tablet-and-up {
   @media screen and (min-width: map-get($breakpoints, small)) {

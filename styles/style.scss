@@ -19,3 +19,11 @@ body {
 main {
   --flow-space: 3rem;
 }
+
+h1 {
+  color: red !important;
+
+  @include media--laptop-and-up {
+    color: green !important;
+  }
+}

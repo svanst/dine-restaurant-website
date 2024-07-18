@@ -1,44 +1,79 @@
 class Tabs {
-  constructor(el) {
-    this.el = el;
-    this.tabs = el.querySelectorAll("[role=tab]");
-    this.panels = [...el.querySelectorAll("[role=tabpanel]")];
+  /**
+   * Creates an instance of Tabs and sets up interactivity via click and keyboard handlers.
+   *
+   * @constructor
+   * @param {Element} tabListEl - The DOM element representing the list of tabs (with role=tablist).
+   * @param {function} [cb] - Optional callback function to perform extra work upon tab selection (other than activating the tab and corresponding tab panels).
+   */
+  constructor(tabListEl, cb) {
+    this.tabListEl = tabListEl;
+    this.tabs = tabListEl.querySelectorAll("[role=tab]");
     this.activeTabIndex = 0;
-    // this.#addClickHandler();
-    this.#addKeyHandlers();
+    this.panels = [];
+    this.cb = cb;
+
+    this.tabs.forEach((tab) => {
+      const panel = document.getElementById(tab.getAttribute("aria-controls"));
+      this.panels.push(panel);
+
+      tab.addEventListener("keydown", this.#onKeydown.bind(this));
+      tab.addEventListener("click", this.#onClick.bind(this));
+    });
   }
 
-  #addKeyHandlers() {
+  #onKeydown(e) {
+    const key = e.key;
+    const isHorizontal =
+      this.tabListEl.getAttribute("aria-orientation") === "horizontal";
+    const horizontalKeys = ["ArrowLeft", "ArrowRight"];
+    const verticalKeys = ["ArrowUp", "ArrowDown"];
+
+    if (
+      (isHorizontal && !horizontalKeys.includes(key)) ||
+      (!isHorizontal && !verticalKeys.includes(key))
+    )
+      return;
+
+    if (key === "ArrowLeft" || key === "ArrowUp") {
+      this.#previous();
+    } else {
+      this.#next();
+    }
+    e.preventDefault();
+  }
+
+  #onClick({ currentTarget }) {
+    this.#select(currentTarget);
+  }
+
+  #select(newTab) {
     this.tabs.forEach((tab, i) => {
-      tab.addEventListener("keydown", (e) => {
-        if (!(e.key === "ArrowLeft" || e.key === "ArrowRight")) return;
-
-        const currentTab = this.tabs[this.activeTabIndex];
-        currentTab.setAttribute("aria-selected", "false");
-        currentTab.setAttribute("tabindex", "-1");
-
-        this.activeTabIndex =
-          e.key === "ArrowLeft"
-            ? Math.max(0, this.activeTabIndex - 1)
-            : Math.min(this.tabs.length - 1, this.activeTabIndex + 1);
-
-        const newTab = this.tabs[this.activeTabIndex];
-        newTab.setAttribute("aria-selected", "true");
-        newTab.setAttribute("tabindex", 0);
-        newTab.focus();
-
-        const newPanel = this.panels.find(
-          (panel) => panel.id === newTab.getAttribute("aria-controls")
-        );
-
-        this.panels.forEach((panel) => {
-          panel.hidden = true;
-          panel.tabindex = -1;
-        });
-
-        newPanel.hidden = false;
-      });
+      if (tab === newTab) {
+        tab.setAttribute("aria-selected", true);
+        tab.setAttribute("tabindex", 0);
+        tab.focus();
+        this.panels[i].hidden = false;
+      } else {
+        tab.setAttribute("aria-selected", false);
+        tab.setAttribute("tabindex", -1);
+        this.panels[i].hidden = true;
+      }
     });
+    this.cb?.(newTab);
+  }
+
+  #previous() {
+    this.activeTabIndex = Math.max(this.activeTabIndex - 1, 0);
+    this.#select(this.tabs[this.activeTabIndex]);
+  }
+
+  #next() {
+    this.activeTabIndex = Math.min(
+      this.activeTabIndex + 1,
+      this.tabs.length - 1
+    );
+    this.#select(this.tabs[this.activeTabIndex]);
   }
 }
 
