@@ -172,6 +172,7 @@
   padding-inline: 24px;
 
   @include media--tablet-and-up {
+    max-width: 621px;
     // grid-template-columns: minmax(1rem, 1fr) repeat(2, 1fr) minmax(1rem, 1fr);
   }
 }

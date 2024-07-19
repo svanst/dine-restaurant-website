@@ -48,8 +48,8 @@
     <script src="script.js" type="module" defer></script>
   </head>
   <body>
-    <section class="hero text-neutral-100">
-      <picture class="hero__picture">
+    <section class="hero text-neutral-100 bg-neutral-700">
+      <picture class="hero__picture bg-neutral-100">
         <source
           srcset="
             ./assets/homepage/hero-bg-desktop.jpg,
@@ -79,7 +79,7 @@
           alt=""
         />
       </picture>
-      <div class="hero__content container bg-neutral-700">
+      <div class="hero__content container">
         <img src="./assets/logo.svg" class="hero__logo" alt="Dine | Home" />
 
         <h1 class="hero__title fs-800 fw-300">
@@ -217,11 +217,13 @@
                 />
               </picture>
 
-              <h3 class="highlights__name fs-600">Seared Salmon Fillet</h3>
-              <p>
-                Our locally sourced salmon served with a refreshing buckwheat
-                summer salad.
-              </p>
+              <div>
+                <h3 class="highlights__name fs-600">Seared Salmon Fillet</h3>
+                <p>
+                  Our locally sourced salmon served with a refreshing buckwheat
+                  summer salad.
+                </p>
+              </div>
             </li>
             <li>
               <picture class="highlights__picture">
@@ -247,11 +249,13 @@
                 />
               </picture>
 
-              <h3 class="highlights__name fs-600">Rosemary Filet Mignon</h3>
-              <p>
-                Our prime beef served to your taste with a delicious choice of
-                seasonal sides.
-              </p>
+              <div>
+                <h3 class="highlights__name fs-600">Rosemary Filet Mignon</h3>
+                <p>
+                  Our prime beef served to your taste with a delicious choice of
+                  seasonal sides.
+                </p>
+              </div>
             </li>
             <li>
               <picture class="highlights__picture">
@@ -276,13 +280,15 @@
                   alt=""
                 />
               </picture>
-              <h3 class="highlights__name fs-600">
-                Summer Fruit Chocolate Mousse
-              </h3>
-              <p class="fs-300">
-                Creamy mousse combined with summer fruits and dark chocolate
-                shavings.
-              </p>
+              <div>
+                <h3 class="highlights__name fs-600">
+                  Summer Fruit Chocolate Mousse
+                </h3>
+                <p class="fs-300">
+                  Creamy mousse combined with summer fruits and dark chocolate
+                  shavings.
+                </p>
+              </div>
             </li>
           </ul>
         </div>
@@ -388,7 +394,7 @@
                 role="tab"
                 aria-selected="true"
                 aria-controls="panel-family"
-                data-img="img-social"
+                data-img="img-family"
                 id="tab-family"
               >
                 Family gathering
@@ -490,9 +496,11 @@
             alt=""
           />
         </picture>
-        <div class="cta__content container">
-          <h2 class="fs-700">Ready to make a reservation?</h2>
-          <button class="btn btn--primary">Book a table</button>
+        <div class="container">
+          <div class="cta__content">
+            <h2 class="fs-700">Ready to make a reservation?</h2>
+            <button class="btn btn--primary">Book a table</button>
+          </div>
         </div>
       </section>
     </main>

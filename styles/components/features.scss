@@ -1,5 +1,7 @@
+@use "../media-queries" as *;
+
 .features {
-  // background-image: url(../assets/patterns/pattern-curve-top-right.svg);
+  position: relative;
   > .container {
     transform: translateY(-70px);
   }
@@ -10,6 +12,8 @@
 
   &__text {
     margin-bottom: 100px;
+    max-width: 40ch;
+    margin-inline: auto;
     &:last-of-type {
       margin-bottom: 30px;
     }
@@ -17,5 +21,22 @@
 
   &__picture {
     box-shadow: var(--shadow);
+    position: relative;
+
+    @include media--tablet-and-up {
+      &:last-of-type::after {
+        content: url(../../assets/patterns/pattern-lines.svg);
+        position: absolute;
+        right: -25px;
+        transform: translateX(20%);
+        bottom: 40px;
+      }
+    }
+  }
+
+  @include media--tablet-and-up {
+    background: url(../assets/patterns/pattern-curve-top-right.svg) no-repeat,
+      url(../assets/patterns/pattern-curve-top-left.svg) no-repeat;
+    background-position: -69vw 130px, 50vw bottom;
   }
 }
