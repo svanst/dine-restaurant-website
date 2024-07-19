@@ -1,13 +1,30 @@
+@use "../media-queries" as *;
+
 .occasions {
   padding-block: 80px 124px;
 
   &__picture {
+    position: relative;
     box-shadow: var(--shadow);
     margin-bottom: 50px;
+
+    @include media--tablet-and-up {
+      &:after {
+        content: url(../../assets/patterns/pattern-lines.svg);
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-40%, -50%);
+      }
+    }
   }
 
   [role="tablist"] {
     margin-bottom: 27px;
+
+    @include media--tablet-and-up {
+      margin-bottom: 55px;
+    }
   }
 
   &__title {
@@ -16,5 +33,10 @@
 
   &__text {
     margin-bottom: 27px;
+  }
+
+  @include media--tablet-and-up {
+    background: url(../assets/patterns/pattern-curve-top-right.svg) no-repeat;
+    background-position: -70vw top;
   }
 }

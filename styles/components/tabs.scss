@@ -1,7 +1,9 @@
 @use "buttons";
+@use "../media-queries" as *;
 
 [role="tablist"] {
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
   &[aria-orientation="vertical"] {
     flex-direction: column;
@@ -9,6 +11,7 @@
 }
 
 [role="tab"] {
+  --selected-color: hsl(var(--clr-neutral-900) / 0.7);
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-500);
@@ -22,7 +25,7 @@
   color: hsl(var(--clr-neutral-900) / 0.35);
 
   &[aria-selected="true"] {
-    color: hsl(var(--clr-neutral-900) / 0.7);
+    color: var(--selected-color);
 
     &::after {
       content: "";
@@ -37,5 +40,11 @@
 
   &:focus-visible {
     outline: 1px solid hsl(var(--clr-neutral-700));
+  }
+
+  @include can-hover {
+    &:hover {
+      color: var(--selected-color);
+    }
   }
 }

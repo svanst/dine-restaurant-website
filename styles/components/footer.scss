@@ -1,3 +1,5 @@
+@use "../media-queries" as *;
+
 .footer {
   padding-block: 80px;
   &__logo {
@@ -12,5 +14,17 @@
   dl div {
     display: flex;
     gap: 1ch;
+  }
+
+  @include media--tablet-and-up {
+    .container {
+      grid-template-columns: 33.33% 1fr;
+      text-align: left;
+      justify-items: start;
+    }
+
+    &__openings {
+      grid-column: 2;
+    }
   }
 }

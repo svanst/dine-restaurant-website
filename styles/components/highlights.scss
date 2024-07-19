@@ -1,25 +1,75 @@
+@use "../media-queries" as *;
+
 .highlights {
+  .container {
+    @include media--tablet-and-up {
+      --spacing: 100px;
+    }
+  }
   ul {
     list-style: none;
     padding: 0;
     margin-bottom: 100px;
   }
 
+  li {
+    --gap: 3.875rem;
+    @include media--tablet-and-up {
+      display: flex;
+      gap: var(--gap);
+      text-align: left;
+    }
+  }
+
   li:not(:first-child) {
     padding-top: 24px;
     margin-top: 54px;
     border-top: 1px solid hsl(var(--clr-neutral-100) / 0.15);
+
+    @include media--tablet-and-up {
+      margin-top: 1.5rem;
+    }
   }
 
   &__intro {
     margin-bottom: 85px;
+    margin-inline: auto;
+
+    @include media--tablet-and-up {
+      margin-bottom: 54px;
+    }
   }
 
   &__picture {
+    position: relative;
     margin-bottom: 36px;
+
+    @include media--tablet-and-up {
+      margin-bottom: 0;
+      flex: 1 0 128px;
+    }
   }
 
   &__name {
+    position: relative;
     margin-bottom: 6px;
+
+    @include media--tablet-and-up {
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 0;
+        transform: translate(calc(-1 * var(--gap)), -50%);
+        right: calc(100% + 3rem);
+        height: 1px;
+        width: min(
+          2rem,
+          calc(var(--gap) - 0.5rem)
+        ); // never be larger than the gap + some breathing room
+        background-color: hsl(var(--clr-accent));
+      }
+    }
   }
 }

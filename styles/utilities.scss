@@ -146,14 +146,28 @@
   margin-top: var(--flow-space, 1rem);
 }
 
+.flex {
+  --gap: 1rem;
+  display: flex;
+  gap: var(--gap);
+}
+
 .d-block {
   display: block;
+}
+
+.full-width {
+  width: 100%;
 }
 
 /* other */
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 .hide,
@@ -163,15 +177,17 @@
 }
 
 .container {
+  --max-size: 1110px;
+  --spacing: 24px;
+  --max-width: min(calc(100% - var(--spacing) * 2), var(--max-size));
+  max-width: var(--max-width);
   text-align: center;
   display: grid;
   align-content: start;
   justify-items: center;
-  max-width: 1110px;
   margin-inline: auto;
-  padding-inline: 24px;
 
   @include media--tablet-and-up {
-    // grid-template-columns: minmax(1rem, 1fr) repeat(2, 1fr) minmax(1rem, 1fr);
+    --spacing: 40px;
   }
 }
