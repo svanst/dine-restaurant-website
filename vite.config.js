@@ -1,4 +1,4 @@
-import { defineConfig, searchForWorkspaceRoot, loadEnv } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import autoprefixer from "autoprefixer";
 
 export default defineConfig(({ mode }) => {

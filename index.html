@@ -48,38 +48,8 @@
     <script src="script.js" type="module" defer></script>
   </head>
   <body>
-    <section class="hero clr-neutral-100 bg-neutral-700">
-      <picture class="hero__picture bg-neutral-100">
-        <source
-          srcset="
-            ./assets/homepage/hero-bg-desktop.jpg,
-            ./assets/homepage/hero-bg-desktop@2x.jpg 2x
-          "
-          media="(min-width: 68.75rem)"
-          type="image/jpeg"
-        />
-        <source
-          srcset="
-            ./assets/homepage/hero-bg-tablet.jpg,
-            ./assets/homepage/hero-bg-tablet@2x.jpg 2x
-          "
-          media="(min-width: 34.375rem)"
-          type="image/jpeg"
-        />
-        <source
-          srcset="
-            ./assets/homepage/hero-bg-mobile.jpg,
-            ./assets/homepage/hero-bg-mobile@2x.jpg 2x
-          "
-          type="image/jpeg"
-        />
-        <img
-          src="./assets/homepage/hero-bg-mobile.jpg"
-          srcset="./assets/homepage/hero-bg-mobile@2x.jpg 2x"
-          alt=""
-        />
-      </picture>
-      <div class="hero__content container">
+    <section class="hero">
+      <div class="hero__content container clr-neutral-100">
         <img src="./assets/logo.svg" class="hero__logo" alt="Dine | Home" />
 
         <h1 class="hero__title fs-800 fw-300">
@@ -500,11 +470,9 @@
           />
         </picture>
         <div class="cta__content container">
-          <!-- <div class="cta__content"> -->
           <h2 class="fs-700">Ready to make a reservation?</h2>
           <button class="btn btn--primary">Book a table</button>
         </div>
-        <!-- </div> -->
       </section>
     </main>
     <footer

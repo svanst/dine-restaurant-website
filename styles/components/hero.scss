@@ -1,28 +1,82 @@
 @use "../media-queries" as *;
 
-.hero {
+/* .hero {
+
   position: relative;
 
-  &__picture img {
-    opacity: 0.97;
-    height: 220px;
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
+  display: grid;
 
-    @include media--tablet-and-up {
-      height: 350px;
+  &__picture {
+    grid-area: picture;
+    img {
+      opacity: 0.97;
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+
+      @include media--tablet-and-up {
+        height: 350px;
+      }
+
+      @include media--laptop-and-up {
+        height: 850px;
+        object-fit: right;
+      }
     }
   }
+
+
+
+  &__content {
+    grid-area: content;
+    padding-top: 1rem;
+    padding-bottom: 150px;
+
+    @include media--laptop-and-up {
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      // bottom: 0;
+      // background-color: hsl(var(--clr-neutral-700));
+    }
+  }
+
+
+
+  @include media--laptop-and-up {
+    grid-template-columns: 600px 1fr;
+    grid-template-areas: "content picture";
+  }
+}
+ */
+
+.hero {
+  --image-height: 220px;
+  --bg-img: image-set(
+    url("../../assets/homepage/hero-bg-mobile.jpg") 1x,
+    url("../../assets/homepage/hero-bg-mobile@2x.jpg") 2x
+  );
+  --bg-opacity: linear-gradient(
+    hsl(var(--clr-neutral-100) / 0.03),
+    hsl(var(--clr-neutral-100) / 0.03)
+  );
+  --bg-box: linear-gradient(
+    to bottom,
+    transparent var(--image-height),
+    hsl(var(--clr-neutral-700)) var(--image-height),
+    hsl(var(--clr-neutral-700))
+  );
+  background-image: var(--bg-box), var(--bg-opacity), var(--bg-img);
+  background-repeat: no-repeat;
+
+  min-height: var(--image-height);
+  padding-top: calc(var(--image-height) + 1rem);
+  padding-bottom: 150px;
 
   &__logo {
     margin-inline: auto;
     margin-bottom: 36px;
-  }
-
-  &__content {
-    padding-top: 1rem;
-    padding-bottom: 150px;
   }
 
   &__title {
@@ -36,5 +90,21 @@
 
   &__text {
     margin-bottom: 52px;
+  }
+
+  @include media--tablet-and-up {
+    --bg-img: image-set(
+      url("../../assets/homepage/hero-bg-tablet.jpg") 1x,
+      url("../../assets/homepage/hero-bg-tablet@2x.jpg") 2x
+    );
+    --image-height: 350px;
+  }
+
+  @include media--laptop-and-up {
+    --bg-img: image-set(
+      url("../../assets/homepage/hero-bg-desktop.jpg") 1x,
+      url("../../assets/homepage/hero-bg-desktop@2x.jpg") 2x
+    );
+    --image-height: 850px;
   }
 }

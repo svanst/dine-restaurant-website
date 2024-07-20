@@ -1,197 +1,199 @@
 @use "media-queries" as *;
 
-/* font sizes */
+@layer utilities {
+  /* font sizes */
 
-.fs-100 {
-  font-size: var(--fs-100);
-}
+  .fs-100 {
+    font-size: var(--fs-100);
+  }
 
-.fs-200 {
-  font-size: var(--fs-200);
-}
+  .fs-200 {
+    font-size: var(--fs-200);
+  }
 
-.fs-300 {
-  font-size: var(--fs-300);
-}
+  .fs-300 {
+    font-size: var(--fs-300);
+  }
 
-.fs-400 {
-  font-size: var(--fs-400);
-}
+  .fs-400 {
+    font-size: var(--fs-400);
+  }
 
-.fs-500 {
-  font-size: var(--fs-500);
-}
+  .fs-500 {
+    font-size: var(--fs-500);
+  }
 
-.fs-600 {
-  font-size: var(--fs-600);
-}
+  .fs-600 {
+    font-size: var(--fs-600);
+  }
 
-.fs-700 {
-  font-size: var(--fs-700);
-}
+  .fs-700 {
+    font-size: var(--fs-700);
+  }
 
-.fs-800 {
-  font-size: var(--fs-800);
-}
+  .fs-800 {
+    font-size: var(--fs-800);
+  }
 
-/* font weight */
+  /* font weight */
 
-.fw-300 {
-  font-weight: 300;
-}
+  .fw-300 {
+    font-weight: 300;
+  }
 
-.fw-400 {
-  font-weight: 400;
-}
+  .fw-400 {
+    font-weight: 400;
+  }
 
-.fw-600 {
-  font-weight: 600;
-}
+  .fw-600 {
+    font-weight: 600;
+  }
 
-.fw-700 {
-  font-weight: 700;
-}
+  .fw-700 {
+    font-weight: 700;
+  }
 
-/* colors */
+  /* colors */
 
-:where([class*="bg-"], [class*="clr-"]) {
-  --alpha: 1; // reset alpha for each color-related utility class, to avoid inheritance
-}
+  :where([class*="bg-"], [class*="clr-"]) {
+    --alpha: 1; // reset alpha for each color-related utility class, to avoid inheritance
+  }
 
-.bg-accent {
-  background-color: hsl(var(--clr-accent) / var(--alpha));
-}
+  .bg-accent {
+    background-color: hsl(var(--clr-accent) / var(--alpha));
+  }
 
-.bg-neutral-100 {
-  background-color: hsl(var(--clr-neutral-100) / var(--alpha));
-}
+  .bg-neutral-100 {
+    background-color: hsl(var(--clr-neutral-100) / var(--alpha));
+  }
 
-.bg-neutral-400 {
-  background-color: hsl(var(--clr-neutral-400) / var(--alpha));
-}
+  .bg-neutral-400 {
+    background-color: hsl(var(--clr-neutral-400) / var(--alpha));
+  }
 
-.bg-neutral-500 {
-  background-color: hsl(var(--clr-neutral-500) / var(--alpha));
-}
+  .bg-neutral-500 {
+    background-color: hsl(var(--clr-neutral-500) / var(--alpha));
+  }
 
-.bg-neutral-600 {
-  background-color: hsl(var(--clr-neutral-600) / var(--alpha));
-}
+  .bg-neutral-600 {
+    background-color: hsl(var(--clr-neutral-600) / var(--alpha));
+  }
 
-.bg-neutral-700 {
-  background-color: hsl(var(--clr-neutral-700) / var(--alpha));
-}
+  .bg-neutral-700 {
+    background-color: hsl(var(--clr-neutral-700) / var(--alpha));
+  }
 
-.bg-neutral-900 {
-  background-color: hsl(var(--clr-neutral-900) / var(--alpha));
-}
+  .bg-neutral-900 {
+    background-color: hsl(var(--clr-neutral-900) / var(--alpha));
+  }
 
-.clr-accent {
-  color: hsl(var(--clr-accent) / var(--alpha));
-}
+  .clr-accent {
+    color: hsl(var(--clr-accent) / var(--alpha));
+  }
 
-.clr-neutral-100 {
-  color: hsl(var(--clr-neutral-100) / var(--alpha));
-}
+  .clr-neutral-100 {
+    color: hsl(var(--clr-neutral-100) / var(--alpha));
+  }
 
-.clr-neutral-400 {
-  color: hsl(var(--clr-neutral-400) / var(--alpha));
-}
+  .clr-neutral-400 {
+    color: hsl(var(--clr-neutral-400) / var(--alpha));
+  }
 
-.clr-neutral-500 {
-  color: hsl(var(--clr-neutral-500) / var(--alpha));
-}
+  .clr-neutral-500 {
+    color: hsl(var(--clr-neutral-500) / var(--alpha));
+  }
 
-.clr-neutral-600 {
-  color: hsl(var(--clr-neutral-600) / var(--alpha));
-}
+  .clr-neutral-600 {
+    color: hsl(var(--clr-neutral-600) / var(--alpha));
+  }
 
-.clr-neutral-700 {
-  color: hsl(var(--clr-neutral-700) / var(--alpha));
-}
+  .clr-neutral-700 {
+    color: hsl(var(--clr-neutral-700) / var(--alpha));
+  }
 
-.clr-neutral-900 {
-  color: hsl(var(--clr-neutral-900) / var(--alpha));
-}
+  .clr-neutral-900 {
+    color: hsl(var(--clr-neutral-900) / var(--alpha));
+  }
 
-/* letter spacing */
+  /* letter spacing */
 
-.ls-300 {
-  letter-spacing: var(--letter-spacing-300);
-}
-.ls-400 {
-  letter-spacing: var(--letter-spacing-400);
-}
-.ls-500 {
-  letter-spacing: var(--letter-spacing-500);
-}
+  .ls-300 {
+    letter-spacing: var(--letter-spacing-300);
+  }
+  .ls-400 {
+    letter-spacing: var(--letter-spacing-400);
+  }
+  .ls-500 {
+    letter-spacing: var(--letter-spacing-500);
+  }
 
-/* line-height */
+  /* line-height */
 
-.lh-200 {
-  line-height: var(--line-height-200);
-}
+  .lh-200 {
+    line-height: var(--line-height-200);
+  }
 
-.lh-300 {
-  line-height: var(--line-height-300);
-}
+  .lh-300 {
+    line-height: var(--line-height-300);
+  }
 
-.lh-400 {
-  line-height: var(--line-height-400);
-}
+  .lh-400 {
+    line-height: var(--line-height-400);
+  }
 
-.lh-500 {
-  line-height: var(--line-height-500);
-}
+  .lh-500 {
+    line-height: var(--line-height-500);
+  }
 
-/* layout */
+  /* layout */
 
-.flow > * + * {
-  margin-top: var(--flow-space, 1rem);
-}
+  .flow > * + * {
+    margin-top: var(--flow-space, 1rem);
+  }
 
-.flex {
-  --gap: 1rem;
-  display: flex;
-  gap: var(--gap);
-}
+  .flex {
+    --gap: 1rem;
+    display: flex;
+    gap: var(--gap);
+  }
 
-.d-block {
-  display: block;
-}
+  .d-block {
+    display: block;
+  }
 
-.full-width {
-  width: 100%;
-}
+  .full-width {
+    width: 100%;
+  }
 
-/* other */
+  /* other */
 
-.uppercase {
-  text-transform: uppercase;
-}
+  .uppercase {
+    text-transform: uppercase;
+  }
 
-.text-balance {
-  text-wrap: balance;
-}
+  .text-balance {
+    text-wrap: balance;
+  }
 
-.hide,
-.hidden,
-[hidden] {
-  display: none;
-}
+  .hide,
+  .hidden,
+  [hidden] {
+    display: none;
+  }
 
-.container {
-  --max-size: 1110px;
-  --spacing: 24px;
-  --max-width: min(calc(100% - var(--spacing) * 2), var(--max-size));
-  max-width: var(--max-width);
-  text-align: center;
-  display: grid;
-  align-content: start;
-  justify-items: center;
-  margin-inline: auto;
+  .container {
+    --max-size: 1110px;
+    --spacing: 24px;
+    --max-width: min(calc(100% - var(--spacing) * 2), var(--max-size));
+    max-width: var(--max-width);
+    text-align: center;
+    display: grid;
+    align-content: start;
+    justify-items: center;
+    margin-inline: auto;
 
-  @include media--tablet-and-up {
-    --spacing: 40px;
+    @include media--tablet-and-up {
+      --spacing: 40px;
+    }
   }
 }
