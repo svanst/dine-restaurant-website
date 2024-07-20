@@ -1,56 +1,5 @@
 @use "../media-queries" as *;
 
-/* .hero {
-
-  position: relative;
-
-  display: grid;
-
-  &__picture {
-    grid-area: picture;
-    img {
-      opacity: 0.97;
-      height: 220px;
-      width: 100%;
-      object-fit: cover;
-      object-position: top;
-
-      @include media--tablet-and-up {
-        height: 350px;
-      }
-
-      @include media--laptop-and-up {
-        height: 850px;
-        object-fit: right;
-      }
-    }
-  }
-
-
-
-  &__content {
-    grid-area: content;
-    padding-top: 1rem;
-    padding-bottom: 150px;
-
-    @include media--laptop-and-up {
-      // position: absolute;
-      // top: 0;
-      // left: 0;
-      // bottom: 0;
-      // background-color: hsl(var(--clr-neutral-700));
-    }
-  }
-
-
-
-  @include media--laptop-and-up {
-    grid-template-columns: 600px 1fr;
-    grid-template-areas: "content picture";
-  }
-}
- */
-
 .hero {
   --image-height: 220px;
   --bg-img: image-set(
@@ -72,6 +21,7 @@
   background-image: var(--bg-box), var(--bg-opacity), var(--bg-img);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 
   min-height: var(--image-height);
   padding-top: calc(var(--image-height) + 1rem);
