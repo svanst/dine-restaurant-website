@@ -195,5 +195,9 @@
     @include media--tablet-and-up {
       --spacing: 40px;
     }
+
+    @include media--laptop-and-up {
+      text-align: left;
+    }
   }
 }

@@ -67,15 +67,17 @@
     hsl(var(--clr-neutral-700)) var(--image-height),
     hsl(var(--clr-neutral-700))
   );
+
+  display: grid;
   background-image: var(--bg-box), var(--bg-opacity), var(--bg-img);
   background-repeat: no-repeat;
+  background-size: cover;
 
   min-height: var(--image-height);
   padding-top: calc(var(--image-height) + 1rem);
   padding-bottom: 150px;
 
   &__logo {
-    margin-inline: auto;
     margin-bottom: 36px;
   }
 
@@ -92,12 +94,21 @@
     margin-bottom: 52px;
   }
 
+  &__content {
+    @include media--laptop-and-up {
+      justify-items: start;
+      padding-top: 65px;
+      width: 100%;
+    }
+  }
+
   @include media--tablet-and-up {
     --bg-img: image-set(
       url("../../assets/homepage/hero-bg-tablet.jpg") 1x,
       url("../../assets/homepage/hero-bg-tablet@2x.jpg") 2x
     );
     --image-height: 350px;
+    padding-bottom: 216px;
   }
 
   @include media--laptop-and-up {
@@ -105,6 +116,14 @@
       url("../../assets/homepage/hero-bg-desktop.jpg") 1x,
       url("../../assets/homepage/hero-bg-desktop@2x.jpg") 2x
     );
-    --image-height: 850px;
+    --image-height: 821px;
+
+    --bg-box: linear-gradient(
+      to right,
+      hsl(var(--clr-neutral-700)) 545px,
+      transparent 545px
+    );
+
+    padding-block: 0;
   }
 }

@@ -1,9 +1,14 @@
 @use "../media-queries" as *;
 
 .features {
+  --shift: -70px;
   position: relative;
   > .container {
-    transform: translateY(-70px);
+    transform: translateY(var(--shift));
+
+    @include media--tablet-and-up {
+      --shift: -100px;
+    }
   }
 
   .decorated-heading {
@@ -13,9 +18,10 @@
   &__text {
     margin-bottom: 100px;
     margin-inline: auto;
-    &:last-of-type {
-      margin-bottom: 30px;
-    }
+  }
+
+  .features__content:last-of-type .features__text {
+    margin-bottom: calc(100px + var(--shift));
   }
 
   &__picture {
