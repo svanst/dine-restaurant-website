@@ -54,60 +54,64 @@
 
 /* colors */
 
+:where([class*="bg-"], [class*="clr-"]) {
+  --alpha: 1; // reset alpha for each color-related utility class, to avoid inheritance
+}
+
 .bg-accent {
-  background-color: hsl(var(--clr-accent) / var(--alpha, 1));
+  background-color: hsl(var(--clr-accent) / var(--alpha));
 }
 
 .bg-neutral-100 {
-  background-color: hsl(var(--clr-neutral-100) / var(--alpha, 1));
+  background-color: hsl(var(--clr-neutral-100) / var(--alpha));
 }
 
 .bg-neutral-400 {
-  background-color: hsl(var(--clr-neutral-400) / var(--alpha, 1));
+  background-color: hsl(var(--clr-neutral-400) / var(--alpha));
 }
 
 .bg-neutral-500 {
-  background-color: hsl(var(--clr-neutral-500) / var(--alpha, 1));
+  background-color: hsl(var(--clr-neutral-500) / var(--alpha));
 }
 
 .bg-neutral-600 {
-  background-color: hsl(var(--clr-neutral-600) / var(--alpha, 1));
+  background-color: hsl(var(--clr-neutral-600) / var(--alpha));
 }
 
 .bg-neutral-700 {
-  background-color: hsl(var(--clr-neutral-700) / var(--alpha, 1));
+  background-color: hsl(var(--clr-neutral-700) / var(--alpha));
 }
 
 .bg-neutral-900 {
-  background-color: hsl(var(--clr-neutral-900) / var(--alpha, 1));
+  background-color: hsl(var(--clr-neutral-900) / var(--alpha));
 }
 
-.text-accent {
-  color: hsl(var(--clr-accent) / var(--alpha, 1));
+.clr-accent {
+  color: hsl(var(--clr-accent) / var(--alpha));
 }
 
-.text-neutral-100 {
-  color: hsl(var(--clr-neutral-100) / var(--alpha, 1));
+.clr-neutral-100 {
+  color: hsl(var(--clr-neutral-100) / var(--alpha));
 }
 
-.text-neutral-400 {
-  color: hsl(var(--clr-neutral-400) / var(--alpha, 1));
+.clr-neutral-400 {
+  color: hsl(var(--clr-neutral-400) / var(--alpha));
 }
 
-.text-neutral-500 {
-  color: hsl(var(--clr-neutral-500) / var(--alpha, 1));
+.clr-neutral-500 {
+  color: hsl(var(--clr-neutral-500) / var(--alpha));
 }
 
-.text-neutral-600 {
-  color: hsl(var(--clr-neutral-600) / var(--alpha, 1));
+.clr-neutral-600 {
+  color: hsl(var(--clr-neutral-600) / var(--alpha));
 }
 
-.text-neutral-700 {
-  color: hsl(var(--clr-neutral-700) / var(--alpha, 1));
+.clr-neutral-700 {
+  color: hsl(var(--clr-neutral-700) / var(--alpha));
 }
 
-.text-neutral-900 {
-  color: hsl(var(--clr-neutral-900) / var(--alpha, 1));
+.clr-neutral-900 {
+  color: hsl(var(--clr-neutral-900) / var(--alpha));
 }
 
 /* letter spacing */
