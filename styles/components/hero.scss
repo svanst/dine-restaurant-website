@@ -17,7 +17,6 @@
     hsl(var(--clr-neutral-700))
   );
 
-  display: grid;
   background-image: var(--bg-box), var(--bg-opacity), var(--bg-img);
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,11 +41,15 @@
 
   &__text {
     margin-bottom: 52px;
+    max-width: 50ch;
+
+    @include media--laptop-and-up {
+      max-width: 37ch;
+    }
   }
 
   &__content {
     @include media--laptop-and-up {
-      justify-items: start;
       padding-top: 65px;
       width: 100%;
     }

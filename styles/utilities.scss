@@ -186,18 +186,10 @@
     --spacing: 24px;
     --max-width: min(calc(100% - var(--spacing) * 2), var(--max-size));
     max-width: var(--max-width);
-    text-align: center;
-    display: grid;
-    align-content: start;
-    justify-items: center;
     margin-inline: auto;
 
     @include media--tablet-and-up {
       --spacing: 40px;
-    }
-
-    @include media--laptop-and-up {
-      text-align: left;
     }
   }
 }

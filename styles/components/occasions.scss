@@ -1,7 +1,36 @@
 @use "../media-queries" as *;
+@use "../mixins" as *;
 
 .occasions {
   padding-block: 80px 124px;
+
+  @include media--tablet-and-up {
+    padding-block: 120px;
+    background: url(../../assets/patterns/pattern-curve-top-right.svg) no-repeat;
+    background-position: -70vw top;
+  }
+
+  @include media--laptop-and-up {
+    padding-block: 160px;
+    background-position: -350px top;
+  }
+
+  > .container {
+    @include media--laptop-and-up {
+      --gap: 125px;
+    }
+  }
+
+  &__tabcontainer {
+    display: flex;
+    flex-direction: column;
+    @include media--laptop-and-up {
+      padding-block: 3rem;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: start;
+    }
+  }
 
   &__picture {
     position: relative;
@@ -9,7 +38,7 @@
     margin-bottom: 50px;
 
     @include media--tablet-and-up {
-      &:after {
+      &::after {
         content: url(../../assets/patterns/pattern-lines.svg);
         position: absolute;
         left: 0;
@@ -17,13 +46,31 @@
         transform: translate(-40%, -50%);
       }
     }
+
+    @include media--laptop-and-up {
+      &::after {
+        transform: translate(-25%, -50%);
+      }
+    }
   }
 
   [role="tablist"] {
     margin-bottom: 27px;
+    width: min(100%, 800px);
+    margin-inline: auto;
 
     @include media--tablet-and-up {
       margin-bottom: 55px;
+    }
+  }
+
+  [role="tab"][aria-selected="true"] {
+    @include media--laptop-and-up {
+      // remove the line below the item and add one left to it
+      @include line-left;
+      &:after {
+        content: none;
+      }
     }
   }
 
@@ -33,10 +80,5 @@
 
   &__text {
     margin-bottom: 27px;
-  }
-
-  @include media--tablet-and-up {
-    background: url(../assets/patterns/pattern-curve-top-right.svg) no-repeat;
-    background-position: -70vw top;
   }
 }

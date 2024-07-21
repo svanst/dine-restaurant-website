@@ -1,0 +1,15 @@
+@mixin line-left {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 0;
+    transform: translate(calc(-1 * var(--gap)), -50%);
+    right: calc(100% + 3rem);
+    height: 1px;
+    width: calc(var(--gap) - 30px);
+    background-color: hsl(var(--clr-accent));
+  }
+}

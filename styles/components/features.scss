@@ -1,47 +1,89 @@
 @use "../media-queries" as *;
 
 .features {
-  --shift: -70px;
-  position: relative;
-  > .container {
-    transform: translateY(var(--shift));
+  --shift: 5rem;
+  margin-block: calc(var(--shift) * -1) 0;
+  @include media--tablet-and-up {
+    background: url(/assets/patterns/pattern-curve-top-right.svg) no-repeat,
+      url(/assets/patterns/pattern-curve-top-left.svg) no-repeat;
+    background-position: -65vw 200px, 49vw bottom;
+    background-size: 116%;
+  }
 
-    @include media--tablet-and-up {
-      --shift: -100px;
+  @include media--laptop-and-up {
+    margin-block: calc(var(--shift) * -1);
+    background-size: min(60%, 895px);
+    background-position: left 260px, right calc(100% - var(--shift)); // the bottom background box should be bottom aligned with the white part, so correct for the negative margin of the features section
+  }
+
+  > .container {
+    @include media--laptop-and-up {
+      gap: 120px 30px;
+
+      grid-auto-flow: dense;
+      align-items: center;
+      justify-content: center;
+
+      /* Alternate picture and content */
+
+      .features__picture:nth-of-type(odd) {
+        grid-column: 1;
+      }
+
+      .features__picture:nth-of-type(even) {
+        grid-column: 2;
+      }
+
+      .features__content:nth-of-type(odd) {
+        justify-self: end;
+      }
+
+      .features__content:nth-of-type(even) {
+        justify-self: start;
+      }
     }
   }
 
   .decorated-heading {
     text-wrap: balance;
+    max-width: 15ch;
+    padding-top: 50px;
   }
 
   &__text {
+    max-width: 38ch;
     margin-bottom: 100px;
     margin-inline: auto;
-  }
 
-  .features__content:last-of-type .features__text {
-    margin-bottom: calc(100px + var(--shift));
+    @include media--laptop-and-up {
+      margin-inline: 0;
+    }
   }
 
   &__picture {
     box-shadow: var(--shadow);
     position: relative;
 
-    @include media--tablet-and-up {
-      &:last-of-type::after {
+    @include media--laptop-and-up {
+      box-shadow: none;
+    }
+
+    &:last-of-type::after {
+      @include media--tablet-and-up {
         content: url(../../assets/patterns/pattern-lines.svg);
         position: absolute;
         right: -25px;
         transform: translateX(20%);
         bottom: 40px;
       }
-    }
-  }
 
-  @include media--tablet-and-up {
-    background: url(../assets/patterns/pattern-curve-top-right.svg) no-repeat,
-      url(../assets/patterns/pattern-curve-top-left.svg) no-repeat;
-    background-position: -69vw 130px, 50vw bottom;
+      @include media--laptop-and-up {
+        bottom: auto;
+        top: calc(
+          50% - var(--shift) / 2
+        ); // the decorative element should be vertically centered with the picture, correct for the negative margin of the features section
+        transform: translate(20%, -50%);
+      }
+    }
   }
 }

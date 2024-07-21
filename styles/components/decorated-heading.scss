@@ -1,12 +1,19 @@
+@use "../media-queries" as *;
+
 .decorated-heading {
+  --decoration-space: 42px; // gap + height;
   margin-bottom: 12px;
   &::before {
     content: "";
     display: block;
     height: 2px;
-    padding-block: 60px 40px;
+    padding-bottom: var(--decoration-space);
     background-image: url(../../assets/patterns/pattern-divide.svg);
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
+
+    @include media--laptop-and-up {
+      background-position: left top;
+    }
   }
 }

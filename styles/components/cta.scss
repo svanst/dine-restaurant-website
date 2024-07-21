@@ -1,23 +1,37 @@
 @use "../media-queries" as *;
 
 .cta {
-  position: relative;
+  background-image: image-set(
+    url("../../assets/homepage/ready-bg-mobile.jpg") 1x,
+    url("../../assets/homepage/ready-bg-mobile@2x.jpg") 2x
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
 
   h2 {
     max-width: none;
   }
   &__content {
-    position: absolute;
-    align-items: center;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-block: 80px;
     gap: 20px;
 
     @include media--laptop-and-up {
       grid-template-columns: 3fr 1fr;
       justify-items: start;
     }
+  }
+
+  @include media--tablet-and-up {
+    background-image: image-set(
+      url("../../assets/homepage/ready-bg-tablet.jpg") 1x,
+      url("../../assets/homepage/ready-bg-tablet@2x.jpg") 2x
+    );
+  }
+
+  @include media--laptop-and-up {
+    background-image: image-set(
+      url("../../assets/homepage/ready-bg-desktop.jpg") 1x,
+      url("../../assets/homepage/ready-bg-desktop@2x.jpg") 2x
+    );
   }
 }
