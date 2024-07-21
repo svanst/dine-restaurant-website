@@ -45,6 +45,15 @@
     }
   }
 
+  li {
+    --gap: 3.875rem;
+    @include media--tablet-and-up {
+      display: flex;
+      gap: var(--gap);
+      text-align: left;
+    }
+  }
+
   li:not(:first-child) {
     padding-top: 24px;
     border-top: 1px solid hsl(var(--clr-neutral-100) / 0.15);

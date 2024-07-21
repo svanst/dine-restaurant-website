@@ -81,4 +81,9 @@
   &__text {
     margin-bottom: 27px;
   }
+
+  @include media--tablet-and-up {
+    background: url(../assets/patterns/pattern-curve-top-right.svg) no-repeat;
+    background-position: -70vw top;
+  }
 }
