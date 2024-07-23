@@ -64,21 +64,25 @@
 
     <main>
       <div class="card">
-        <form name="booking" action="" novalidate>
+        <form
+          name="booking"
+          class="form--booking flow"
+          style="--flow-space: 3rem"
+          action=""
+          novalidate
+        >
           <p>
             <label for="name" class="sr-only">Name</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="name"
+              placeholder="Name"
               required
-              value="test"
               aria-describedby="error-name"
+              autocomplete="off"
             />
-            <span id="error-name" class="error-wrapper" aria-live="polite">
-              <span id="error-name--required">This field is required</span>
-            </span>
+            <span class="error" id="error-name" aria-live="polite"></span>
           </p>
           <p>
             <label for="email" class="sr-only">Email</label>
@@ -86,68 +90,61 @@
               type="email"
               id="email"
               name="email"
-              placeholder="email"
+              placeholder="Email"
+              aria-describedby="error-email"
+              autocomplete="off"
               required
-              value="test@gm"
             />
-            <span id="error-email" class="error-wrapper" aria-live="polite">
-              <span id="error-email--required">This field is required</span>
-              <span id="error-email--invalid">This field is invalid</span>
-            </span>
+            <span class="error" id="error-email" aria-live="polite"></span>
           </p>
 
-          <fieldset>
+          <fieldset name="date">
             <legend>Pick a date</legend>
-            <label for="date_month" class="sr-only">Month</label>
+            <label for="month" class="sr-only">Month</label>
             <input
               type="number"
-              id="date_month"
-              name="date_month"
+              id="month"
+              name="month"
               placeholder="MM"
               min="1"
               max="12"
               required
-              value="01"
               aria-describedby="error-date"
             />
 
-            <label for="date_day" class="sr-only">Day</label>
+            <label for="day" class="sr-only">Day</label>
             <input
               type="number"
-              id="date_day"
-              name="date_day"
+              id="day"
+              name="day"
               placeholder="DD"
               min="1"
               max="31"
               required
-              value="01"
               aria-describedby="error-date"
             />
 
-            <label for="date_year" class="sr-only">Year</label>
+            <label for="year" class="sr-only">Year</label>
             <input
               type="number"
-              id="date_year"
-              name="date_year"
+              id="year"
+              name="year"
               placeholder="YYYY"
               min="2024"
               max="2099"
               required
               aria-describedby="error-date"
             />
-            <span id="error-date" class="error-wrapper" aria-live="polite">
-              <span id="error-date--required">This field is incomplete</span>
-              <span id="error-date--invalid">This field is invalid</span>
-            </span>
+            <span class="error" id="error-date" aria-live="polite"></span>
           </fieldset>
 
-          <fieldset>
+          <fieldset name="time">
             <legend>Pick a time</legend>
-            <label for="time_hour" class="sr-only">Hour</label>
+            <label for="hour" class="sr-only">Hour</label>
             <input
               type="number"
-              id="time_hour"
-              name="time_hour"
+              id="hour"
+              name="hour"
               placeholder="09"
               min="0"
               max="12"
@@ -155,11 +152,11 @@
               required
             />
 
-            <label for="time_minute" class="sr-only">Minutes</label>
+            <label for="minute" class="sr-only">Minutes</label>
             <input
               type="number"
-              id="time_minute"
-              name="time_minute"
+              id="minute"
+              name="minute"
               placeholder="00"
               min="0"
               max="59"
@@ -172,15 +169,10 @@
               <option value="AM">AM</option>
               <option value="PM">PM</option>
             </select>
-            <span id="error-time" class="error-wrapper" aria-live="polite">
-              <span id="error-time--required">This field is incomplete</span>
-              <span id="error-time--invalid">This field is invalid</span>
-            </span>
+            <span class="error" id="error-time" aria-live="polite"></span>
           </fieldset>
-          <div>
-            <label for="number-of-people" class="sr-only"
-              >Number of People</label
-            >
+          <fieldset>
+            <label for="numPeople" class="sr-only">Number of People</label>
             <button
               type="button"
               id="decrease"
@@ -190,15 +182,19 @@
             </button>
             <input
               type="number"
-              id="number-of-people"
-              name="number-of-people"
-              placeholder="4 people"
+              id="numPeople"
+              name="numPeople"
+              value="4"
               min="1"
               max="100"
               readonly
               required
               aria-describedby="error-number-of-people"
+              hidden
             />
+            <span id="numPeopleDisplay" class="fw-700 clr-neutral-700">
+              4 people</span
+            >
             <button
               type="button"
               id="increase"
@@ -206,15 +202,12 @@
             >
               +
             </button>
-            <span id="error-number-of-people" aria-live="polite">
-              <span id="error-number-of-people--invalid"
-                >This field is required</span
-              >
-              <span id="error-number-of-people--invalid"
-                >This field is invalid</span
-              >
-            </span>
-          </div>
+            <span
+              class="error"
+              id="error-number-of-people"
+              aria-live="polite"
+            ></span>
+          </fieldset>
           <button type="submit" class="btn">Make reservation</button>
         </form>
       </div>
