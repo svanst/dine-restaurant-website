@@ -1,0 +1,12 @@
+@use "../functions" as *;
+
+.card {
+  width: min(to-rem(540px), 100%);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.card--booking {
+  --shift: 186px;
+  margin-block-start: calc(var(--shift) * -1);
+}

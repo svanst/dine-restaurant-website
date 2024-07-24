@@ -17,8 +17,9 @@
 
   --clr-error: 0 43% 50%; // red
 
-  --clr-shadow: hsl(219 20% 28% / 50.32%);
-  --shadow: 0px 75px 100px -50px var(--clr-shadow);
+  --clr-shadow: 219 20% 28%;
+  --shadow: 0px 75px 100px -50px hsl(var(--clr-shadow) / 0.5);
+  --shadow-2: 0px 15px 25px 0 hsl(var(--clr-shadow) / 0.25);
 
   --fs-100: #{to-rem(10px)};
   --fs-200: #{to-rem(14px)};

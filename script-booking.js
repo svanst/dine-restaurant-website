@@ -1,3 +1,5 @@
+import Select from "./select.js";
+
 import {
   validateName,
   validateEmail,
@@ -44,6 +46,8 @@ email.addEventListener("input", validateEmail);
 [hour, minute].forEach((input) =>
   input.addEventListener("input", validateTime)
 );
+
+const select = new Select(document.querySelector(".custom-select"));
 
 function increaseNumPeople() {
   form.numPeople.value = Math.min(+form.numPeople.value + 1, 20);

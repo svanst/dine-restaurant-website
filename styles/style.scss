@@ -26,6 +26,10 @@ body {
   }
 }
 
+.booking {
+  padding-block: 86px;
+}
+
 .features,
 .highlights,
 .occasions {
@@ -53,11 +57,4 @@ body {
   p {
     max-width: 40ch;
   }
-}
-
-//temp
-.card {
-  padding: 2rem;
-  border: 1px solid black;
-  min-height: 300px;
 }

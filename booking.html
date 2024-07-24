@@ -63,153 +63,185 @@
     </section>
 
     <main>
-      <div class="card">
-        <form
-          name="booking"
-          class="form--booking flow"
-          style="--flow-space: 3rem"
-          action=""
-          novalidate
-        >
-          <p>
-            <label for="name" class="sr-only">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              required
-              aria-describedby="error-name"
-              autocomplete="off"
-            />
-            <span class="error" id="error-name" aria-live="polite"></span>
-          </p>
-          <p>
-            <label for="email" class="sr-only">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              aria-describedby="error-email"
-              autocomplete="off"
-              required
-            />
-            <span class="error" id="error-email" aria-live="polite"></span>
-          </p>
+      <div class="container booking">
+        <div class="card card--booking bg-neutral-100 fs-600">
+          <form name="booking" class="form--booking flow" action="" novalidate>
+            <p>
+              <label for="name" class="sr-only">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+                aria-describedby="error-name"
+                autocomplete="off"
+              />
+              <span class="error" id="error-name" aria-live="polite"></span>
+            </p>
+            <p>
+              <label for="email" class="sr-only">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                aria-describedby="error-email"
+                autocomplete="off"
+                required
+              />
+              <span class="error" id="error-email" aria-live="polite"></span>
+            </p>
 
-          <fieldset name="date">
-            <legend>Pick a date</legend>
-            <label for="month" class="sr-only">Month</label>
-            <input
-              type="number"
-              id="month"
-              name="month"
-              placeholder="MM"
-              min="1"
-              max="12"
-              required
-              aria-describedby="error-date"
-            />
+            <fieldset name="date" class="flex date">
+              <legend>Pick a date</legend>
+              <label for="month" class="sr-only">Month</label>
+              <input
+                type="number"
+                id="month"
+                name="month"
+                placeholder="MM"
+                min="1"
+                max="12"
+                required
+                aria-describedby="error-date"
+              />
 
-            <label for="day" class="sr-only">Day</label>
-            <input
-              type="number"
-              id="day"
-              name="day"
-              placeholder="DD"
-              min="1"
-              max="31"
-              required
-              aria-describedby="error-date"
-            />
+              <label for="day" class="sr-only">Day</label>
+              <input
+                type="number"
+                id="day"
+                name="day"
+                placeholder="DD"
+                min="1"
+                max="31"
+                required
+                aria-describedby="error-date"
+              />
 
-            <label for="year" class="sr-only">Year</label>
-            <input
-              type="number"
-              id="year"
-              name="year"
-              placeholder="YYYY"
-              min="2024"
-              max="2099"
-              required
-              aria-describedby="error-date"
-            />
-            <span class="error" id="error-date" aria-live="polite"></span>
-          </fieldset>
+              <label for="year" class="sr-only">Year</label>
+              <input
+                type="number"
+                id="year"
+                class="date__year"
+                name="year"
+                placeholder="YYYY"
+                min="2024"
+                max="2050"
+                required
+                aria-describedby="error-date"
+              />
+              <span class="error" id="error-date" aria-live="polite"></span>
+            </fieldset>
 
-          <fieldset name="time">
-            <legend>Pick a time</legend>
-            <label for="hour" class="sr-only">Hour</label>
-            <input
-              type="number"
-              id="hour"
-              name="hour"
-              placeholder="09"
-              min="0"
-              max="12"
-              aria-describedby="error-time"
-              required
-            />
+            <fieldset name="time" class="flex">
+              <legend>Pick a time</legend>
+              <label for="hour" class="sr-only">Hour</label>
+              <input
+                type="number"
+                id="hour"
+                name="hour"
+                placeholder="09"
+                min="0"
+                max="12"
+                aria-describedby="error-time"
+                required
+              />
 
-            <label for="minute" class="sr-only">Minutes</label>
-            <input
-              type="number"
-              id="minute"
-              name="minute"
-              placeholder="00"
-              min="0"
-              max="59"
-              aria-describedby="error-time"
-              required
-            />
+              <label for="minute" class="sr-only">Minutes</label>
+              <input
+                type="number"
+                id="minute"
+                name="minute"
+                placeholder="00"
+                min="0"
+                max="59"
+                aria-describedby="error-time"
+                required
+              />
+              <div class="custom-select">
+                <label id="ampm-label" class="custom-select__label sr-only"
+                  >AM or PM</label
+                >
+                <button
+                  type="button"
+                  class="custom-select__trigger"
+                  aria-controls="option-list"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="ampm-label"
+                  role="combobox"
+                  tabindex="0"
+                  aria-activedescendant="option-am"
+                >
+                  AM
+                </button>
+                <ul
+                  class="custom-select__options"
+                  id="option-list"
+                  role="listbox"
+                  aria-labelledby="ampm-label"
+                >
+                  <li
+                    role="option"
+                    id="option-am"
+                    class="custom-select__option"
+                    aria-selected="true"
+                  >
+                    AM
+                  </li>
+                  <li
+                    role="option"
+                    id="option-pm"
+                    class="custom-select__option"
+                  >
+                    PM
+                  </li>
+                </ul>
+              </div>
 
-            <label for="am_pm" class="sr-only">AM or PM</label>
-            <select id="am_pm" aria-label="AM or PM">
-              <option value="AM">AM</option>
-              <option value="PM">PM</option>
-            </select>
-            <span class="error" id="error-time" aria-live="polite"></span>
-          </fieldset>
-          <fieldset>
-            <label for="numPeople" class="sr-only">Number of People</label>
-            <button
-              type="button"
-              id="decrease"
-              aria-label="Decrease number of people"
-            >
-              −
-            </button>
-            <input
-              type="number"
-              id="numPeople"
-              name="numPeople"
-              value="4"
-              min="1"
-              max="100"
-              readonly
-              required
-              aria-describedby="error-number-of-people"
-              hidden
-            />
-            <span id="numPeopleDisplay" class="fw-700 clr-neutral-700">
-              4 people</span
-            >
-            <button
-              type="button"
-              id="increase"
-              aria-label="Increase number of people"
-            >
-              +
-            </button>
-            <span
-              class="error"
-              id="error-number-of-people"
-              aria-live="polite"
-            ></span>
-          </fieldset>
-          <button type="submit" class="btn">Make reservation</button>
-        </form>
+              <span class="error" id="error-time" aria-live="polite"></span>
+            </fieldset>
+            <fieldset>
+              <label for="numPeople" class="sr-only">Number of People</label>
+              <button
+                type="button"
+                id="decrease"
+                aria-label="Decrease number of people"
+              >
+                −
+              </button>
+              <input
+                type="number"
+                id="numPeople"
+                name="numPeople"
+                value="4"
+                min="1"
+                max="100"
+                readonly
+                required
+                aria-describedby="error-number-of-people"
+                hidden
+              />
+              <span id="numPeopleDisplay" class="fw-700 clr-neutral-700">
+                4 people</span
+              >
+              <button
+                type="button"
+                id="increase"
+                aria-label="Increase number of people"
+              >
+                +
+              </button>
+              <span
+                class="error"
+                id="error-number-of-people"
+                aria-live="polite"
+              ></span>
+            </fieldset>
+            <button type="submit" class="btn">Make reservation</button>
+          </form>
+        </div>
       </div>
     </main>
     <footer

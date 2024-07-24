@@ -1,0 +1,45 @@
+.form--booking {
+  --flow-space: 2rem;
+
+  input,
+  .custom-select > button {
+    padding-inline: 14px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid hsl(var(--clr-neutral-700) / 0.5);
+    line-height: 1.4;
+    padding-block: 0.5rem;
+
+    &:focus-visible {
+      outline: none;
+      border-color: hsl(var(--clr-neutral-700));
+    }
+
+    &::placeholder {
+      color: hsl(var(--clr-neutral-700) / 0.5);
+    }
+  }
+
+  .date__year,
+  .custom-select {
+    flex: 1 0 88px;
+  }
+
+  fieldset {
+    padding: 0;
+    border: none;
+    :last-of-type(input) {
+      flex-basis: 88px;
+    }
+  }
+
+  legend {
+    padding-inline: 0;
+    text-align: left;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+  }
+}
