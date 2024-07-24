@@ -1,4 +1,5 @@
 const bookingForm = document.forms["booking"];
+let setValidationMessages = false;
 
 const isEmpty = (input) => input.validity.valueMissing;
 const isTypeMismatch = (input) => input.validity.typeMismatch;
@@ -33,6 +34,11 @@ export function validateDate() {
   const { date: fieldset, month, day, year } = bookingForm;
   const inputs = [month, day, year];
 
+  if (isInPast(+year.value, +month.value, +day.value)) {
+    setErrorForFieldset(fieldset, "Date can not be in the past");
+    return;
+  }
+
   if (isValid(fieldset)) {
     clearErrorForFieldset(fieldset);
   } else if (inputs.some(isEmpty)) {
@@ -44,6 +50,15 @@ export function validateDate() {
     )
   ) {
     setErrorForFieldset(fieldset, "Invalid date");
+  }
+
+  function isInPast(year, month, day) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const selectedDate = new Date(year, month - 1, day);
+
+    return selectedDate < today;
   }
 }
 
@@ -66,6 +81,7 @@ export function validateTime() {
 }
 
 export function validateAll() {
+  setValidationMessages = true;
   validateName();
   validateEmail();
   validateDate();
@@ -76,6 +92,7 @@ const clearErrorForInput = (input) => setErrorForInput(input, "");
 const clearErrorForFieldset = (fieldset) => setErrorForFieldset(fieldset, "");
 
 function setErrorForInput(input, message) {
+  if (!setValidationMessages) return;
   const { nextElementSibling: errorTarget } = input;
   if (!errorTarget.classList.contains("error")) return;
 
@@ -83,6 +100,7 @@ function setErrorForInput(input, message) {
 }
 
 function setErrorForFieldset(fieldset, message) {
+  if (!setValidationMessages) return;
   const errorTarget = fieldset.querySelector(".error");
   errorTarget.textContent = message;
 }
