@@ -34,7 +34,7 @@ form.addEventListener("submit", (e) => {
   e.target.classList.add("was-validated");
 });
 
-const { name, email, month, day, year, hour, minute } = form;
+const { name, email, month, day, year, hour, minute, meridien } = form;
 
 name.addEventListener("input", validateName);
 email.addEventListener("input", validateEmail);
@@ -47,7 +47,13 @@ email.addEventListener("input", validateEmail);
   input.addEventListener("input", validateTime)
 );
 
-const select = new Select(document.querySelector(".custom-select"));
+const select = new Select(
+  document.querySelector(".custom-select"),
+  (option) => {
+    meridien.value = option.dataset.value;
+    meridien.dispatchEvent(new Event("change"));
+  }
+);
 
 function increaseNumPeople() {
   form.numPeople.value = Math.min(+form.numPeople.value + 1, 20);
@@ -62,3 +68,7 @@ function decreaseNumPeople() {
 function updateNumPeopleDisplay() {
   numPeople.display.textContent = `${numPeople.input.value} people`;
 }
+
+meridien.addEventListener("change", validateTime);
+
+window.mer = meridien;

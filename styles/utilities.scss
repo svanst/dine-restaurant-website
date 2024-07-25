@@ -115,6 +115,10 @@
     color: hsl(var(--clr-neutral-900) / var(--alpha));
   }
 
+  .bg-transparent {
+    background-color: transparent;
+  }
+
   /* letter spacing */
 
   .ls-300 {

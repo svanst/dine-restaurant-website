@@ -1,5 +1,7 @@
 .error {
   color: hsl(var(--clr-error));
+  font-size: var(--fs-100);
+  font-weight: 500;
 }
 
 .was-validated {
@@ -7,8 +9,12 @@
     border-color: hsl(var(--clr-error));
     color: hsl(var(--clr-error));
 
+    &:focus {
+      border-color: hsl(var(--clr-error));
+    }
+
     &::placeholder {
-      color: hsl(var(--clr-error));
+      color: hsl(var(--clr-error) / 0.5);
     }
   }
 }

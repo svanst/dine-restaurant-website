@@ -1,5 +1,9 @@
-.form--booking {
+.booking {
   --flow-space: 2rem;
+
+  > * {
+    position: relative;
+  }
 
   input,
   .custom-select > button {
@@ -9,6 +13,7 @@
     border-bottom: 1px solid hsl(var(--clr-neutral-700) / 0.5);
     line-height: 1.4;
     padding-block: 0.5rem;
+    caret-color: hsl(var(--clr-accent));
 
     &:focus-visible {
       outline: none;
@@ -25,12 +30,44 @@
     flex: 1 0 88px;
   }
 
-  fieldset {
-    padding: 0;
+  .custom-select__options {
+    z-index: 2;
+  }
+
+  :where(fieldset) {
     border: none;
+    padding: 0;
+  }
+
+  &__date,
+  &__time {
     :last-of-type(input) {
       flex-basis: 88px;
     }
+  }
+
+  &__num-people {
+    padding-inline: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      transition: transform 0.2s;
+      transform: scale(1.25);
+      &:hover {
+        transform: scale(1.5);
+        color: hsl(var(--clr-accent));
+      }
+    }
+  }
+
+  .error {
+    display: block;
+    padding-inline-start: 1rem;
+    top: 100%;
+    position: absolute;
+    line-height: 3;
   }
 
   legend {

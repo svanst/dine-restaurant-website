@@ -5,7 +5,7 @@ class Select {
    * @constructor
    * @param {Element} selectEl - The DOM element that contains the elements with role=combobox and role=listbox.
    */
-  constructor(selectEl) {
+  constructor(selectEl, cb) {
     this.selectEl = selectEl;
     this.combobox = selectEl.querySelector("[role=combobox]");
     this.listbox = selectEl.querySelector("[role=listbox]");
@@ -14,6 +14,7 @@ class Select {
 
     this.onClick = this.onClick.bind(this);
     this.onBlur = this.onBlur.bind(this);
+    this.cb = cb;
 
     this.combobox.addEventListener("click", this.onClick);
     this.combobox.addEventListener("blur", this.onBlur);
@@ -40,6 +41,7 @@ class Select {
     });
     this.updateDisplay();
     this.combobox.focus();
+    this.cb(selectedOption);
   }
 
   openListbox() {
@@ -59,7 +61,6 @@ class Select {
   }
 
   onClick(e) {
-    console.log("click");
     if (e.currentTarget.matches('[role="option"]')) {
       this.selectOption(e.currentTarget);
     }

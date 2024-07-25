@@ -29,6 +29,15 @@
         font-display: swap;
         font-family: "League Spartan";
         font-style: normal;
+        font-weight: 500;
+        src: url("./fonts/league-spartan-v11-latin-500.woff2") format("woff2");
+      }
+
+      /* league-spartan-600 - latin */
+      @font-face {
+        font-display: swap;
+        font-family: "League Spartan";
+        font-style: normal;
         font-weight: 600;
         src: url("./fonts/league-spartan-v11-latin-600.woff2") format("woff2");
       }
@@ -65,8 +74,13 @@
     <main>
       <div class="container booking">
         <div class="card card--booking bg-neutral-100 fs-600">
-          <form name="booking" class="form--booking flow" action="" novalidate>
-            <p>
+          <form
+            name="booking"
+            class="form--booking booking flow"
+            action=""
+            novalidate
+          >
+            <p class="booking__name">
               <label for="name" class="sr-only">Name</label>
               <input
                 type="text"
@@ -79,7 +93,7 @@
               />
               <span class="error" id="error-name" aria-live="polite"></span>
             </p>
-            <p>
+            <p class="booking__email">
               <label for="email" class="sr-only">Email</label>
               <input
                 type="email"
@@ -93,7 +107,7 @@
               <span class="error" id="error-email" aria-live="polite"></span>
             </p>
 
-            <fieldset name="date" class="flex date">
+            <fieldset name="date" class="flex booking__date">
               <legend>Pick a date</legend>
               <label for="month" class="sr-only">Month</label>
               <input
@@ -134,7 +148,7 @@
               <span class="error" id="error-date" aria-live="polite"></span>
             </fieldset>
 
-            <fieldset name="time" class="flex">
+            <fieldset name="time" class="booking__time flex">
               <legend>Pick a time</legend>
               <label for="hour" class="sr-only">Hour</label>
               <input
@@ -174,7 +188,7 @@
                   tabindex="0"
                   aria-activedescendant="option-am"
                 >
-                  AM
+                  PM
                 </button>
                 <ul
                   class="custom-select__options"
@@ -185,59 +199,60 @@
                   <li
                     role="option"
                     id="option-am"
+                    data-value="AM"
                     class="custom-select__option"
-                    aria-selected="true"
                   >
                     AM
                   </li>
                   <li
                     role="option"
                     id="option-pm"
+                    data-value="PM"
                     class="custom-select__option"
+                    aria-selected="true"
                   >
                     PM
                   </li>
                 </ul>
+                <input type="hidden" name="meridien" value="PM" />
               </div>
 
               <span class="error" id="error-time" aria-live="polite"></span>
             </fieldset>
-            <fieldset>
+            <fieldset class="booking__num-people number-spinner">
               <label for="numPeople" class="sr-only">Number of People</label>
               <button
                 type="button"
                 id="decrease"
                 aria-label="Decrease number of people"
+                class="btn btn--icon"
               >
-                −
+                <img src="./assets/icons/icon-minus.svg" alt="" />
               </button>
-              <input
-                type="number"
-                id="numPeople"
-                name="numPeople"
-                value="4"
-                min="1"
-                max="100"
-                readonly
-                required
-                aria-describedby="error-number-of-people"
-                hidden
-              />
-              <span id="numPeopleDisplay" class="fw-700 clr-neutral-700">
-                4 people</span
-              >
+              <div>
+                <input
+                  type="text"
+                  size="1"
+                  id="numPeople"
+                  name="numPeople"
+                  value="4"
+                  hidden
+                  readonly
+                  required
+                  aria-describedby="error-number-of-people"
+                />
+                <span id="numPeopleDisplay" class="fw-700 clr-neutral-700">
+                  4 people</span
+                >
+              </div>
               <button
                 type="button"
                 id="increase"
                 aria-label="Increase number of people"
+                class="btn btn--icon"
               >
-                +
+                <img src="./assets/icons/icon-plus.svg" alt="" />
               </button>
-              <span
-                class="error"
-                id="error-number-of-people"
-                aria-live="polite"
-              ></span>
             </fieldset>
             <button type="submit" class="btn">Make reservation</button>
           </form>
