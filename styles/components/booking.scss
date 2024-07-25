@@ -1,3 +1,5 @@
+@use "../media-queries" as *;
+
 .booking {
   --flow-space: 2rem;
 
@@ -6,7 +8,7 @@
   }
 
   input,
-  .custom-select > button,
+  .custom-select,
   .booking__num-people {
     padding-inline: 14px;
     width: 100%;
@@ -26,9 +28,17 @@
     }
   }
 
+  .custom-select:has(:focus) {
+    border-color: hsl(var(--clr-neutral-700));
+  }
+
+  .custom-select__trigger {
+    padding: 0;
+  }
+
   .date__year,
   .custom-select {
-    flex: 1 0 88px;
+    flex: 1.4;
   }
 
   .custom-select__options {
@@ -38,6 +48,22 @@
   :where(fieldset) {
     border: none;
     padding: 0;
+
+    > *:not(legend, button) {
+      flex: 1;
+    }
+
+    legend {
+      flex-basis: 135px;
+
+      @include media--tablet-and-up {
+        margin-right: 20px;
+      }
+    }
+
+    @include media--tablet-and-up {
+      align-items: baseline;
+    }
   }
 
   &__date,
@@ -70,9 +96,19 @@
     line-height: 3;
   }
 
+  fieldset .error {
+    @include media--tablet-and-up {
+      padding-inline-start: 0;
+    }
+  }
+
   legend {
     padding-inline: 0;
     text-align: left;
+
+    @include media--tablet-and-up {
+      float: left;
+    }
   }
 
   button[type="submit"] {
@@ -83,4 +119,8 @@
 
 .booking-wrapper {
   padding-bottom: 86px;
+}
+
+* {
+  min-width: 0 !important;
 }

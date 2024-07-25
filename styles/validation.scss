@@ -18,9 +18,13 @@
     }
   }
 
-  fieldset:invalid .custom-select__trigger {
+  fieldset:invalid .custom-select {
     border-color: hsl(var(--clr-error));
     color: hsl(var(--clr-error) / 0.5);
+
+    button {
+      color: inherit;
+    }
 
     &:focus {
       border-color: hsl(var(--clr-error));

@@ -2,12 +2,16 @@
   position: relative;
   [role="combobox"] {
     cursor: pointer;
+    text-align: left;
     position: relative;
     width: 100%;
     border: none;
     background: none;
-    border-bottom: 1px solid;
     padding-right: 38px;
+
+    &:focus {
+      outline: none;
+    }
 
     &::after {
       content: "";
@@ -65,38 +69,3 @@
     }
   }
 }
-
-/* .custom-select {
-  position: relative;
-  appearance: none;
-
-  border: none;
-  border-bottom: 1px solid;
-  background-image: url("../../assets/icons/icon-arrow.svg");
-  background-repeat: no-repeat;
-  background-position: center right;
-  padding-right: 38px;
-  z-index: 9999;
-
-  &__options {
-    position: absolute;
-    top: calc(100% + 9px);
-    // right: 0;
-    left: 0;
-    box-shadow: var(--shadow-2);
-    background: hsl(var(--clr-neutral-100));
-    list-style: none;
-    padding: 0;
-    padding: 1rem;
-    padding-inline-end: 2rem;
-  }
-
-  &__option {
-    display: flex;
-    gap: 8px;
-    &::before {
-      content: url("../../assets/icons/icon-check.svg");
-    }
-  }
-}
- */

@@ -6,6 +6,15 @@
   background-size: cover;
   background-position: center;
 
+  .hero__text {
+    margin-bottom: 52px;
+    max-width: 49ch;
+
+    @include media--laptop-and-up {
+      max-width: 37ch;
+    }
+  }
+
   &--home {
     --image-height: 220px;
     --bg-img: image-set(
@@ -38,15 +47,6 @@
 
       @include media--laptop-and-up {
         line-height: 1;
-      }
-    }
-
-    .hero__text {
-      margin-bottom: 52px;
-      max-width: 50ch;
-
-      @include media--laptop-and-up {
-        max-width: 37ch;
       }
     }
 
@@ -94,6 +94,10 @@
 
     .hero__logo {
       margin-bottom: 44px;
+
+      @include media--tablet-and-up {
+        justify-self: start;
+      }
     }
 
     .hero__title {
@@ -109,6 +113,10 @@
         url("../../assets/booking/hero-bg-tablet.jpg") 1x,
         url("../../assets/booking/hero-bg-tablet@2x.jpg") 2x
       );
+
+      button {
+        display: none;
+      }
     }
 
     @include media--laptop-and-up {

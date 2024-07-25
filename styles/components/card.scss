@@ -1,4 +1,5 @@
 @use "../functions" as *;
+@use "../media-queries" as *;
 
 .card {
   width: min(to-rem(540px), 100%);
@@ -9,4 +10,9 @@
 .card--booking {
   --shift: 137px;
   margin-block-start: calc(var(--shift) * -1);
+
+  @include media--tablet-and-up {
+    --shift: 231px;
+    padding: 3rem;
+  }
 }
