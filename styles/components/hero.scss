@@ -85,11 +85,24 @@
 
   &--reservation {
     --image-height: 600px;
+    padding-block: 56px;
 
     background-image: image-set(
       url("../../assets/booking/hero-bg-mobile.jpg") 1x,
       url("../../assets/booking/hero-bg-mobile@2x.jpg") 2x
     );
+
+    .hero__logo {
+      margin-bottom: 44px;
+    }
+
+    .hero__title {
+      margin-bottom: 13px;
+    }
+
+    .hero__text {
+      margin-bottom: 20px;
+    }
 
     @include media--tablet-and-up {
       background-image: image-set(

@@ -6,7 +6,8 @@
   }
 
   input,
-  .custom-select > button {
+  .custom-select > button,
+  .booking__num-people {
     padding-inline: 14px;
     width: 100%;
     border: none;
@@ -47,7 +48,6 @@
   }
 
   &__num-people {
-    padding-inline: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,4 +79,8 @@
     width: 100%;
     padding: 1rem;
   }
+}
+
+.booking-wrapper {
+  padding-bottom: 86px;
 }
