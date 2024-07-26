@@ -1,5 +1,7 @@
 @use "media-queries" as *;
 
+// use a layer to give lower priority to the reset and utilities styling, because vite doesn't guarantee that the order in which the scss partials are read is maintained in the resulting css
+
 @layer utilities {
   /* font sizes */
 

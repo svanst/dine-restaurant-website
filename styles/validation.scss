@@ -9,25 +9,26 @@
     border-color: hsl(var(--clr-error));
     color: hsl(var(--clr-error));
 
-    &:focus {
-      border-color: hsl(var(--clr-error));
-    }
-
-    &::placeholder {
+    &:not(:focus)::placeholder {
       color: hsl(var(--clr-error) / 0.5);
     }
   }
 
-  fieldset:invalid .custom-select {
-    border-color: hsl(var(--clr-error));
-    color: hsl(var(--clr-error) / 0.5);
-
-    button {
-      color: inherit;
+  fieldset:invalid {
+    legend {
+      color: hsl(var(--clr-error));
     }
 
-    &:focus {
+    .custom-select {
       border-color: hsl(var(--clr-error));
+    }
+
+    .custom-select:has(:focus) {
+      border-color: hsl(var(--clr-neutral-700));
+    }
+
+    .custom-select__trigger {
+      color: hsl(var(--clr-error) / 0.5);
     }
   }
 }

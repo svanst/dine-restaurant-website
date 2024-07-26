@@ -1,3 +1,5 @@
+// use a layer to give lower priority to the reset and utilities styling, because vite doesn't guarantee that the order in which the scss partials are read is maintained in the resulting css
+
 @layer reset {
   /*
   1. Use a more-intuitive box-sizing model.
@@ -115,6 +117,7 @@
     border: 0;
   }
 
+  // Turn on in a production app
   /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
   // @media (prefers-reduced-motion: reduce) {
   //   html:focus-within {

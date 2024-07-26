@@ -20,12 +20,13 @@
       background-position: center;
       position: absolute;
       right: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 0;
+
       width: 24px;
       height: 24px;
       pointer-events: none;
       transition: transform 0.2s ease-in-out;
+      transform-origin: center 70%;
     }
 
     &[aria-expanded="true"]::after {
@@ -53,7 +54,7 @@
 
   [role="option"] {
     cursor: pointer;
-    padding-inline: 1rem;
+    padding-inline: 42px 30px;
     line-height: 2;
     display: flex;
     gap: 8px;
@@ -64,8 +65,10 @@
   }
 
   [aria-selected="true"] {
-    &::before {
-      content: url("../../assets/icons/icon-check.svg");
-    }
+    background: url("../../assets/icons/icon-check.svg") no-repeat;
+    background-position: 1rem center;
+    // &::before {
+    //   content: url("../../assets/icons/icon-check.svg");
+    // }
   }
 }
