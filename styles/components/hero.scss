@@ -92,11 +92,20 @@
       url("../../assets/booking/hero-bg-mobile@2x.jpg") 2x
     );
 
+    .hero__content {
+      @include media--laptop-and-up {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     .hero__logo {
       margin-bottom: 44px;
 
       @include media--tablet-and-up {
         justify-self: start;
+      }
+      @include media--laptop-and-up {
+        margin-bottom: 153px;
       }
     }
 
@@ -114,7 +123,7 @@
         url("../../assets/booking/hero-bg-tablet@2x.jpg") 2x
       );
 
-      button {
+      .btn {
         display: none;
       }
     }

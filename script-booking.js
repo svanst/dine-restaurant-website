@@ -36,6 +36,7 @@ form.addEventListener("submit", (e) => {
 
 const { name, email, month, day, year, hour, minute, meridien } = form;
 
+meridien.addEventListener("change", validateTime);
 name.addEventListener("input", validateName);
 email.addEventListener("input", validateEmail);
 
@@ -68,7 +69,3 @@ function decreaseNumPeople() {
 function updateNumPeopleDisplay() {
   numPeople.display.textContent = `${numPeople.input.value} people`;
 }
-
-meridien.addEventListener("change", validateTime);
-
-window.mer = meridien;

@@ -1,5 +1,5 @@
 const bookingForm = document.forms["booking"];
-let setValidationMessages = false;
+let showValidationFeedback = false;
 
 const isEmpty = (input) => input.validity.valueMissing;
 const isTypeMismatch = (input) => input.validity.typeMismatch;
@@ -106,7 +106,7 @@ export function validateTime() {
 }
 
 export function validateAll() {
-  setValidationMessages = true;
+  showValidationFeedback = true; // this makes sure validation feedback is only shown after the first time all fields are validated (usually on form submission), and not when the user interacts with the form for the first time
   validateName();
   validateEmail();
   validateDate();
@@ -120,7 +120,7 @@ function setFieldsetCustomValidity(fieldset, message) {
 }
 
 function setErrorMessage(element) {
-  if (!setValidationMessages) return;
+  if (!showValidationFeedback) return;
   getErrorTarget(element).textContent = getErrorMessage(element);
 
   function getErrorTarget(element) {

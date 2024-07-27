@@ -1,5 +1,6 @@
 .custom-select {
   position: relative;
+
   [role="combobox"] {
     cursor: pointer;
     text-align: left;
@@ -34,6 +35,11 @@
     }
   }
 
+  &:has(:focus-within) {
+    outline: 1px solid hsl(var(--clr-neutral-700));
+    border-color: transparent;
+  }
+
   [role="listbox"] {
     display: none;
     list-style: none;
@@ -58,17 +64,16 @@
     line-height: 2;
     display: flex;
     gap: 8px;
-    justify-content: end;
     &:hover {
       background-color: hsl(var(--clr-neutral-400) / 0.2);
     }
   }
 
   [aria-selected="true"] {
-    background: url("../../assets/icons/icon-check.svg") no-repeat;
-    background-position: 1rem center;
-    // &::before {
-    //   content: url("../../assets/icons/icon-check.svg");
-    // }
+    &::before {
+      content: url("../../assets/icons/icon-check.svg");
+      position: absolute;
+      left: 1rem;
+    }
   }
 }

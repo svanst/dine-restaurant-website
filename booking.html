@@ -56,25 +56,28 @@
     <link rel="stylesheet" href="./styles/utilities.scss" />
     <script src="script-booking.js" type="module" defer></script>
   </head>
-  <body>
+  <body class="page--booking">
     <section class="hero hero--reservation">
       <div class="hero__content container clr-neutral-100">
-        <img src="./assets/logo.svg" class="hero__logo" alt="Dine | Home" />
+        <div>
+          <img src="./assets/logo.svg" class="hero__logo" alt="Dine | Home" />
 
-        <h1 class="hero__title fs-800 fw-300 ls-300">Reservations</h1>
-        <p class="hero__text">
-          We can’t wait to host you. If you have any special requirements please
-          feel free to call on the phone number below. We’ll be happy to
-          accommodate you.
-        </p>
-        <button class="btn btn--primary">Reserve place</button>
+          <h1 class="hero__title fs-800 fw-300 ls-300">Reservations</h1>
+          <p class="hero__text">
+            We can’t wait to host you. If you have any special requirements
+            please feel free to call on the phone number below. We’ll be happy
+            to accommodate you.
+          </p>
+          <a href="#booking-card" class="btn btn--primary">Reserve place</a>
+        </div>
       </div>
     </section>
 
     <main>
       <div class="container booking-wrapper">
-        <div class="card card--booking bg-neutral-100 fs-600">
+        <div id="booking-card" class="card card--booking bg-neutral-100 fs-600">
           <form
+            id="booking-form"
             name="booking"
             class="form--booking booking flow"
             action=""

@@ -1,6 +1,7 @@
 @use "../media-queries" as *;
 
 .btn {
+  display: inline-block;
   border: 1px solid;
   background-color: hsl(var(--clr-neutral-700));
   color: hsl(var(--clr-neutral-100));
@@ -24,6 +25,11 @@
     background-color: hsl(var(--clr-neutral-100));
   }
 
+  &:focus-visible {
+    outline: 1px solid hsl(var(--clr-neutral-700));
+    outline-offset: var(--focus-outline-offset);
+  }
+
   &--primary {
     background-color: transparent;
 
@@ -34,13 +40,18 @@
       }
     }
 
+    &[disabled] {
+      color: hsl(var(--clr-neutral-100) / 0.4);
+    }
+
     &:active {
       color: hsl(var(--clr-neutral-600));
       background-color: hsl(var(--clr-neutral-100));
     }
 
-    &[disabled] {
-      color: hsl(var(--clr-neutral-100) / 0.4);
+    &:focus-visible {
+      outline-color: hsl(var(--clr-neutral-100));
+      outline-style: dashed;
     }
   }
 

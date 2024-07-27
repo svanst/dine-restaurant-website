@@ -10,9 +10,15 @@
 .card--booking {
   --shift: 137px;
   margin-block-start: calc(var(--shift) * -1);
+  scroll-margin-top: 20px;
 
   @include media--tablet-and-up {
     --shift: 231px;
     padding: 3rem;
+  }
+
+  @include media--laptop-and-up {
+    grid-column: 2;
+    margin-block-start: -341px;
   }
 }

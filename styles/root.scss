@@ -39,6 +39,8 @@
   --line-height-400: 1.625;
   --line-height-500: 2;
 
+  --focus-outline-offset: 4px;
+
   @include media--tablet-and-up {
     --fs-400: #{to-rem(20px)};
     --fs-700: #{to-rem(48px)};

@@ -6,6 +6,11 @@
 @use "media-queries" as *;
 @use "components" as *;
 
+*,
+html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   font-family: var(--ff-body), var(--ff-system-sans);
   font-size: var(--fs-400);
@@ -52,5 +57,15 @@ body {
 
   p {
     max-width: 40ch;
+  }
+}
+
+.page--booking {
+  @include media--laptop-and-up {
+    main {
+      background: url("../assets/patterns/pattern-lines.svg") no-repeat center
+          77.5%,
+        url("../assets/patterns/pattern-curve-bottom-right.svg") no-repeat;
+    }
   }
 }
