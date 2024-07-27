@@ -36,21 +36,53 @@ export function validateEmail() {
   setErrorMessage(email);
 }
 
-export function validateDate() {
-  const { date: fieldset, month, day, year } = bookingForm;
-  const inputs = [month, day, year];
+export function validateDateAndTime() {
+  // validate date and time together, because changing the date can have implications for the time validation (time cannot be in the past)
+  const {
+    date: fieldsetDate,
+    time: fieldsetTime,
+    year,
+    month,
+    day,
+    hour: hourInput,
+    minute: minuteInput,
+    meridien: meridienInput,
+  } = bookingForm;
 
-  if (inputs.some(isEmpty)) {
-    setFieldsetCustomValidity(fieldset, "This field is incomplete");
-  } else if (inputs.some(isInvalidNumber)) {
-    setFieldsetCustomValidity(fieldset, "Invalid date");
-  } else if (isDateInPast()) {
-    setFieldsetCustomValidity(fieldset, "Date cannot be in the past");
-  } else {
-    setFieldsetCustomValidity(fieldset, "");
+  validateDate();
+  validateTime();
+
+  function validateDate() {
+    const inputs = [month, day, year];
+
+    if (inputs.some(isEmpty)) {
+      setFieldsetCustomValidity(fieldsetDate, "This field is incomplete");
+    } else if (inputs.some(isInvalidNumber)) {
+      setFieldsetCustomValidity(fieldsetDate, "Invalid date");
+    } else if (isDateInPast()) {
+      setFieldsetCustomValidity(fieldsetDate, "Date cannot be in the past");
+    } else {
+      setFieldsetCustomValidity(fieldsetDate, "");
+    }
+
+    setErrorMessage(fieldsetDate);
   }
 
-  setErrorMessage(fieldset);
+  function validateTime() {
+    const inputs = [hour, minute];
+
+    if (inputs.some(isEmpty)) {
+      setFieldsetCustomValidity(fieldsetTime, "This field is incomplete");
+    } else if (inputs.some(isInvalidNumber)) {
+      setFieldsetCustomValidity(fieldsetTime, "Invalid time");
+    } else if (isDateInPast() || (isToday() && isTimeInPast())) {
+      setFieldsetCustomValidity(fieldsetTime, "Time cannot be in the past");
+    } else {
+      setFieldsetCustomValidity(fieldsetTime, "");
+    }
+
+    setErrorMessage(fieldsetTime);
+  }
 
   function isDateInPast() {
     const today = new Date();
@@ -60,28 +92,15 @@ export function validateDate() {
 
     return selectedDate < today;
   }
-}
 
-export function validateTime() {
-  const {
-    time: fieldset,
-    hour: hourInput,
-    minute: minuteInput,
-    meridien: meridienInput,
-  } = bookingForm;
-  const inputs = [hour, minute];
+  function isToday() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-  if (inputs.some(isEmpty)) {
-    setFieldsetCustomValidity(fieldset, "This field is incomplete");
-  } else if (inputs.some(isInvalidNumber)) {
-    setFieldsetCustomValidity(fieldset, "Invalid time");
-  } else if (isTimeInPast()) {
-    setFieldsetCustomValidity(fieldset, "Time cannot be in the past");
-  } else {
-    setFieldsetCustomValidity(fieldset, "");
+    const selectedDate = new Date(+year.value, +month.value - 1, +day.value);
+
+    return selectedDate.getTime() === today.getTime();
   }
-
-  setErrorMessage(fieldset);
 
   function isTimeInPast() {
     const meridien = meridienInput.value;
@@ -109,8 +128,7 @@ export function validateAll() {
   showValidationFeedback = true; // this makes sure validation feedback is only shown after the first time all fields are validated (usually on form submission), and not when the user interacts with the form for the first time
   validateName();
   validateEmail();
-  validateDate();
-  validateTime();
+  validateDateAndTime();
 }
 
 // when validation feedback applies to all elements in a fieldset, set the customValidity on all inputs inside the fieldset. This way, the :invalid / :valid pseudo-class is automatically updated for these inputs

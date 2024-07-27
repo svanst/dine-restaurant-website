@@ -3,8 +3,7 @@ import Select from "./select.js";
 import {
   validateName,
   validateEmail,
-  validateDate,
-  validateTime,
+  validateDateAndTime,
   validateAll,
 } from "./validation.js";
 
@@ -41,16 +40,16 @@ day.addEventListener("change", prependZero);
 hour.addEventListener("change", prependZero);
 minute.addEventListener("change", prependZero);
 
-meridien.addEventListener("change", validateTime);
+meridien.addEventListener("change", validateDateAndTime);
 name.addEventListener("input", validateName);
 email.addEventListener("input", validateEmail);
 
 [month, day, year].forEach((input) =>
-  input.addEventListener("input", validateDate)
+  input.addEventListener("input", validateDateAndTime)
 );
 
 [hour, minute].forEach((input) =>
-  input.addEventListener("input", validateTime)
+  input.addEventListener("input", validateDateAndTime)
 );
 
 const select = new Select(
