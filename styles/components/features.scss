@@ -70,7 +70,7 @@
 
     &:last-of-type::after {
       @include media--tablet-and-up {
-        content: url(../../assets/patterns/pattern-lines.svg);
+        content: url(../assets/patterns/pattern-lines.svg);
         position: absolute;
         right: -25px;
         transform: translateX(20%);

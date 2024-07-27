@@ -22,8 +22,8 @@
   &--home {
     --image-height: 220px;
     --bg-img: image-set(
-      url("../../assets/homepage/hero-bg-mobile.jpg") 1x,
-      url("../../assets/homepage/hero-bg-mobile@2x.jpg") 2x
+      url("../assets/homepage/hero-bg-mobile.jpg") 1x,
+      url("../assets/homepage/hero-bg-mobile@2x.jpg") 2x
     );
     --bg-opacity: linear-gradient(
       hsl(var(--clr-neutral-100) / 0.03),
@@ -63,8 +63,8 @@
 
     @include media--tablet-and-up {
       --bg-img: image-set(
-        url("../../assets/homepage/hero-bg-tablet.jpg") 1x,
-        url("../../assets/homepage/hero-bg-tablet@2x.jpg") 2x
+        url("../assets/homepage/hero-bg-tablet.jpg") 1x,
+        url("../assets/homepage/hero-bg-tablet@2x.jpg") 2x
       );
       --image-height: 350px;
       padding-bottom: 216px;
@@ -72,8 +72,8 @@
 
     @include media--laptop-and-up {
       --bg-img: image-set(
-        url("../../assets/homepage/hero-bg-desktop.jpg") 1x,
-        url("../../assets/homepage/hero-bg-desktop@2x.jpg") 2x
+        url("../assets/homepage/hero-bg-desktop.jpg") 1x,
+        url("../assets/homepage/hero-bg-desktop@2x.jpg") 2x
       );
       --image-height: 821px;
 
@@ -92,8 +92,8 @@
     padding-block: 56px;
 
     background-image: image-set(
-      url("../../assets/booking/hero-bg-mobile.jpg") 1x,
-      url("../../assets/booking/hero-bg-mobile@2x.jpg") 2x
+      url("../assets/booking/hero-bg-mobile.jpg") 1x,
+      url("../assets/booking/hero-bg-mobile@2x.jpg") 2x
     );
 
     .hero__content {
@@ -123,8 +123,8 @@
 
     @include media--tablet-and-up {
       background-image: image-set(
-        url("../../assets/booking/hero-bg-tablet.jpg") 1x,
-        url("../../assets/booking/hero-bg-tablet@2x.jpg") 2x
+        url("../assets/booking/hero-bg-tablet.jpg") 1x,
+        url("../assets/booking/hero-bg-tablet@2x.jpg") 2x
       );
 
       .btn {
@@ -134,8 +134,8 @@
 
     @include media--laptop-and-up {
       background-image: image-set(
-        url("../../assets/booking/hero-bg-desktop.jpg") 1x,
-        url("../../assets/booking/hero-bg-desktop@2x.jpg") 2x
+        url("../assets/booking/hero-bg-desktop.jpg") 1x,
+        url("../assets/booking/hero-bg-desktop@2x.jpg") 2x
       );
     }
   }

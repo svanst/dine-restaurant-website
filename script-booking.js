@@ -40,7 +40,6 @@ day.addEventListener("change", prependZero);
 hour.addEventListener("change", prependZero);
 minute.addEventListener("change", prependZero);
 
-meridien.addEventListener("change", validateDateAndTime);
 name.addEventListener("input", validateName);
 email.addEventListener("input", validateEmail);
 
@@ -51,6 +50,7 @@ email.addEventListener("input", validateEmail);
 [hour, minute].forEach((input) =>
   input.addEventListener("input", validateDateAndTime)
 );
+meridien.addEventListener("change", validateDateAndTime);
 
 const select = new Select(
   document.querySelector(".custom-select"),

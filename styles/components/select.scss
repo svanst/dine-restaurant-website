@@ -16,7 +16,7 @@
 
     &::after {
       content: "";
-      background-image: url("../../assets/icons/icon-arrow.svg");
+      background-image: url("../assets/icons/icon-arrow.svg");
       background-repeat: no-repeat;
       background-position: center;
       position: absolute;
@@ -71,7 +71,7 @@
 
   [aria-selected="true"] {
     &::before {
-      content: url("../../assets/icons/icon-check.svg");
+      content: url("../assets/icons/icon-check.svg");
       position: absolute;
       left: 1rem;
     }

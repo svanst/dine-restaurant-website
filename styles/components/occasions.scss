@@ -6,7 +6,7 @@
 
   @include media--tablet-and-up {
     padding-block: 120px;
-    background: url(../../assets/patterns/pattern-curve-top-right.svg) no-repeat;
+    background: url(../assets/patterns/pattern-curve-top-right.svg) no-repeat;
     background-position: -70vw top;
   }
 
@@ -39,7 +39,7 @@
 
     @include media--tablet-and-up {
       &::after {
-        content: url(../../assets/patterns/pattern-lines.svg);
+        content: url(../assets/patterns/pattern-lines.svg);
         position: absolute;
         left: 0;
         top: 0;

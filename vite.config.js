@@ -15,5 +15,14 @@ export default defineConfig(({ mode }) => {
         plugins: [autoprefixer({})],
       },
     },
+    build: {
+      outDir: "dist",
+      rollupOptions: {
+        input: {
+          main: "index.html",
+          booking: "booking.html",
+        },
+      },
+    },
   };
 });
