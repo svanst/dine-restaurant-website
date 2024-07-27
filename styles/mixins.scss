@@ -1,6 +1,7 @@
 @mixin line-left {
   position: relative;
-  &:before {
+
+  &::before {
     content: "";
     position: absolute;
     display: block;

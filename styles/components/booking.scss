@@ -7,19 +7,58 @@
     position: relative;
   }
 
+  &__date,
+  &__time {
+    :last-of-type(input) {
+      flex-basis: 88px;
+    }
+  }
+
+  &__num-people {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.2s;
+      width: 30px;
+      aspect-ratio: 1;
+      transform: scale(1.25);
+
+      &:hover {
+        transform: scale(1.5);
+        color: hsl(var(--clr-accent));
+      }
+
+      &:focus-visible {
+        outline-offset: 3px;
+      }
+    }
+  }
+
+  .date__year,
+  .custom-select {
+    flex: 1.4;
+    min-width: 78px;
+  }
+
   input,
   .custom-select,
   .booking__num-people {
     padding-inline: 14px;
     width: 100%;
     border: none;
-    border-bottom: 1px solid hsl(var(--clr-neutral-700) / 0.5);
+    border-bottom: 1px solid hsl(var(--clr-neutral-700) / 50%);
     line-height: 1.4;
     padding-block: 0.5rem;
     caret-color: hsl(var(--clr-accent));
 
     &::placeholder {
-      color: hsl(var(--clr-neutral-700) / 0.5);
+      color: hsl(var(--clr-neutral-700) / 50%);
     }
   }
 
@@ -29,12 +68,6 @@
 
   .custom-select__trigger {
     padding: 0;
-  }
-
-  .date__year,
-  .custom-select {
-    flex: 1.4;
-    min-width: 78px;
   }
 
   .custom-select__options {
@@ -59,38 +92,6 @@
 
     @include media--tablet-and-up {
       align-items: flex-end;
-    }
-  }
-
-  &__date,
-  &__time {
-    :last-of-type(input) {
-      flex-basis: 88px;
-    }
-  }
-
-  &__num-people {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.2s;
-      width: 30px;
-      aspect-ratio: 1;
-      transform: scale(1.25);
-      &:hover {
-        transform: scale(1.5);
-        color: hsl(var(--clr-accent));
-      }
-
-      &:focus-visible {
-        outline-offset: 3px;
-      }
     }
   }
 
@@ -131,11 +132,11 @@
   // hide the up and down arrow
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
   }
 
   input[type="number"] {
-    -moz-appearance: textfield;
+    appearance: textfield;
   }
 }
 

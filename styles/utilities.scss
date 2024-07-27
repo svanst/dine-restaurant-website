@@ -126,9 +126,11 @@
   .ls-300 {
     letter-spacing: var(--letter-spacing-300);
   }
+
   .ls-400 {
     letter-spacing: var(--letter-spacing-400);
   }
+
   .ls-500 {
     letter-spacing: var(--letter-spacing-500);
   }
@@ -159,6 +161,7 @@
 
   .flex {
     --gap: 1rem;
+
     display: flex;
     gap: var(--gap);
   }
@@ -191,6 +194,7 @@
     --max-size: 1110px;
     --spacing: 24px;
     --max-width: min(calc(100% - var(--spacing) * 2), var(--max-size));
+
     max-width: var(--max-width);
     margin-inline: auto;
 

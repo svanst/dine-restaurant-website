@@ -2,13 +2,15 @@
 
 .decorated-heading {
   --decoration-space: 42px; // gap + height;
+
   margin-bottom: 12px;
+
   &::before {
     content: "";
     display: block;
     height: 2px;
     padding-bottom: var(--decoration-space);
-    background-image: url(../assets/patterns/pattern-divide.svg);
+    background-image: url("../assets/patterns/pattern-divide.svg");
     background-position: top;
     background-repeat: no-repeat;
 

@@ -6,7 +6,7 @@
 
   @include media--tablet-and-up {
     padding-block: 120px;
-    background: url(../assets/patterns/pattern-curve-top-right.svg) no-repeat;
+    background: url("../assets/patterns/pattern-curve-top-right.svg") no-repeat;
     background-position: -70vw top;
   }
 
@@ -24,6 +24,7 @@
   &__tabcontainer {
     display: flex;
     flex-direction: column;
+
     @include media--laptop-and-up {
       padding-block: 3rem;
       flex-direction: column-reverse;
@@ -39,7 +40,7 @@
 
     @include media--tablet-and-up {
       &::after {
-        content: url(../assets/patterns/pattern-lines.svg);
+        content: url("../assets/patterns/pattern-lines.svg");
         position: absolute;
         left: 0;
         top: 0;
@@ -68,7 +69,8 @@
     @include media--laptop-and-up {
       // remove the line below the item and add one left to it
       @include line-left;
-      &:after {
+
+      &::after {
         content: none;
       }
     }
@@ -83,7 +85,7 @@
   }
 
   @include media--tablet-and-up {
-    background: url(../assets/patterns/pattern-curve-top-right.svg) no-repeat;
+    background: url("../assets/patterns/pattern-curve-top-right.svg") no-repeat;
     background-position: -70vw top;
   }
 }

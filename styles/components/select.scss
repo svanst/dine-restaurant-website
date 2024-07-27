@@ -22,7 +22,6 @@
       position: absolute;
       right: 0;
       top: 0;
-
       width: 24px;
       height: 24px;
       pointer-events: none;
@@ -42,7 +41,6 @@
 
   [role="listbox"] {
     display: none;
-    list-style: none;
     padding: 0;
     margin: 0;
     position: absolute;
@@ -64,8 +62,9 @@
     line-height: 2;
     display: flex;
     gap: 8px;
+
     &:hover {
-      background-color: hsl(var(--clr-neutral-400) / 0.2);
+      background-color: hsl(var(--clr-neutral-400) / 20%);
     }
   }
 

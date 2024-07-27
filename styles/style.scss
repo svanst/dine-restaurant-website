@@ -26,6 +26,7 @@ body {
   display: grid;
   column-gap: var(--gap, 0);
   justify-items: center;
+
   @include media--laptop-and-up {
     justify-items: start;
   }

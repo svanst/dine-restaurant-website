@@ -10,7 +10,7 @@
     color: hsl(var(--clr-error));
 
     &:not(:focus)::placeholder {
-      color: hsl(var(--clr-error) / 0.5);
+      color: hsl(var(--clr-error) / 50%);
     }
   }
 

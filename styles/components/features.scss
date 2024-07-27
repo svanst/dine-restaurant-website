@@ -2,10 +2,12 @@
 
 .features {
   --shift: 5rem;
+
   margin-block: calc(var(--shift) * -1) 0;
+
   @include media--tablet-and-up {
-    background: url(/assets/patterns/pattern-curve-top-right.svg) no-repeat,
-      url(/assets/patterns/pattern-curve-top-left.svg) no-repeat;
+    background: url("/assets/patterns/pattern-curve-top-right.svg") no-repeat,
+      url("/assets/patterns/pattern-curve-top-left.svg") no-repeat;
     background-position: -65vw 200px, 49vw bottom;
     background-size: 116%;
   }
@@ -19,7 +21,6 @@
   > .container {
     @include media--laptop-and-up {
       gap: 120px 30px;
-
       grid-auto-flow: dense;
       align-items: center;
       justify-content: center;
@@ -70,7 +71,7 @@
 
     &:last-of-type::after {
       @include media--tablet-and-up {
-        content: url(../assets/patterns/pattern-lines.svg);
+        content: url("../assets/patterns/pattern-lines.svg");
         position: absolute;
         right: -25px;
         transform: translateX(20%);
@@ -82,6 +83,7 @@
         top: calc(
           50% - var(--shift) / 2
         ); // the decorative element should be vertically centered with the picture, correct for the negative margin of the features section
+
         transform: translate(20%, -50%);
       }
     }

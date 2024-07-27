@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $breakpoints: (
   // 550px
   small: 34.375rem,
@@ -8,25 +10,25 @@ $breakpoints: (
 );
 
 :root {
-  --small: #{map-get($breakpoints, small)};
-  --medium: #{map-get($breakpoints, medium)};
-  --large: #{map-get($breakpoints, large)};
+  --small: #{map.get($breakpoints, small)};
+  --medium: #{map.get($breakpoints, medium)};
+  --large: #{map.get($breakpoints, large)};
 }
 
 @mixin media--tablet-and-up {
-  @media screen and (min-width: map-get($breakpoints, small)) {
+  @media screen and (min-width: map.get($breakpoints, small)) {
     @content;
   }
 }
 
 @mixin media--laptop-and-up {
-  @media screen and (min-width: map-get($breakpoints, medium)) {
+  @media screen and (min-width: map.get($breakpoints, medium)) {
     @content;
   }
 }
 
 @mixin media--desktop-and-up {
-  @media screen and (min-width: map-get($breakpoints, large)) {
+  @media screen and (min-width: map.get($breakpoints, large)) {
     @content;
   }
 }
