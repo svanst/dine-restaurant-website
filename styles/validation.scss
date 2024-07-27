@@ -24,11 +24,12 @@
     }
 
     .custom-select:has(:focus) {
-      border-color: hsl(var(--clr-neutral-700));
+      border-color: transparent;
     }
 
     .custom-select__trigger {
-      color: hsl(var(--clr-error) / 0.5);
+      color: hsl(var(--clr-error));
+      border-color: transparent;
     }
   }
 }

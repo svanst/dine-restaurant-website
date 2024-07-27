@@ -60,8 +60,9 @@
     <section class="hero hero--reservation">
       <div class="hero__content container clr-neutral-100">
         <div>
-          <img src="./assets/logo.svg" class="hero__logo" alt="Dine | Home" />
-
+          <a class="hero__logo" href="/" aria-label="Dine | home">
+            <img src="./assets/logo.svg" alt="" />
+          </a>
           <h1 class="hero__title fs-800 fw-300 ls-300">Reservations</h1>
           <p class="hero__text">
             We can’t wait to host you. If you have any special requirements
@@ -120,6 +121,7 @@
                 placeholder="MM"
                 min="1"
                 max="12"
+                maxlength="2"
                 required
                 aria-describedby="error-date"
               />
@@ -266,7 +268,9 @@
       class="footer fs-200 bg-neutral-700 clr-neutral-100 ls-500 lh-500 uppercase"
     >
       <div class="container">
-        <img src="./assets/logo.svg" class="footer__logo" alt="Dine | Home" />
+        <a href="/" class="footer__logo" aria-label="Dine | Home">
+          <img src="./assets/logo.svg" class="footer__logo" alt="" />
+        </a>
 
         <address>
           <div class="sr-only">Dine</div>

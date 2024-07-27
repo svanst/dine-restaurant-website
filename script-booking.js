@@ -36,6 +36,11 @@ form.addEventListener("submit", (e) => {
 
 const { name, email, month, day, year, hour, minute, meridien } = form;
 
+month.addEventListener("change", prependZero);
+day.addEventListener("change", prependZero);
+hour.addEventListener("change", prependZero);
+minute.addEventListener("change", prependZero);
+
 meridien.addEventListener("change", validateTime);
 name.addEventListener("input", validateName);
 email.addEventListener("input", validateEmail);
@@ -68,4 +73,10 @@ function decreaseNumPeople() {
 
 function updateNumPeopleDisplay() {
   numPeople.display.textContent = `${numPeople.input.value} people`;
+}
+
+function prependZero(e) {
+  if (e.target.value.length === 1) {
+    e.target.value = "0" + e.target.value;
+  }
 }

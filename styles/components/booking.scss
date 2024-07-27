@@ -126,6 +126,16 @@
     outline: 1px solid hsl(var(--clr-neutral-700));
     border-bottom-color: transparent;
   }
+
+  // hide the up and down arrow
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
 .booking-wrapper {

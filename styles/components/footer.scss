@@ -4,6 +4,11 @@
   padding-block: 80px;
   &__logo {
     margin-bottom: 42px;
+
+    @include media--tablet-and-up {
+      margin-bottom: 0;
+      align-self: start;
+    }
   }
 
   address {
