@@ -27,6 +27,7 @@ My goals in taking on this challenge included the following:
 
 - Create a two-page responsive website with tricky layout challenges (such as the hero section with multiple, partially overlapping elements and the decorative elements that are present in multiple places in the design).
 - Write semantic and accessible HTML.
+- Serve optimal images based on screen size and pixel density
 - Work with JavaScript's constraint validation API and add more than just required validation checks. For example, I wanted to implement validation to check if the date/time for a booking was not in the past.
 - Create custom components that match the provided design: a select component with icons, and a tabs component. Make them accessible, both for screen readers as well as for keyboard navigation.
 - Use SCSS with mixins for media queries and share breakpoints between SCSS and JavaScript.
