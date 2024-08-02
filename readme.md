@@ -4,7 +4,7 @@ This is my solution to the [Dine Website challenge on Frontend Mentor](https://w
 
 Live Site URL: https://dine-restaurant-website-flax.vercel.app
 
-### The challenge
+### Requirements
 
 Users should be able to:
 
@@ -15,11 +15,6 @@ Users should be able to:
   - The `Name` or `Email Address` fields are empty
   - The `Email Address` is not formatted correctly
   - Any of the `Pick a date` or `Pick a time` fields are empty
-
-### Screenshots of my implementation of the desktop layout
-
-![](/screenshots/dine-desktop.png)
-![](/screenshots/booking-desktop.png)
 
 ### Goals
 
@@ -32,3 +27,8 @@ My goals in taking on this challenge included the following:
 - Create custom components that match the provided design: a select component with icons, and a tabs component. Make them accessible, both for screen readers as well as for keyboard navigation.
 - Use SCSS with mixins for media queries and share breakpoints between SCSS and JavaScript.
 - Create and use a set of generic utility classes in addition to a set of specialized classes for more complex components.
+
+### Screenshots of my implementation of the desktop layout
+
+![](/screenshots/dine-desktop.png)
+![](/screenshots/booking-desktop.png)
